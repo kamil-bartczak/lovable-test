@@ -1,46 +1,55 @@
 
-import { Check, X } from "lucide-react";
+import { Check, X, UserCircle, Building2, Briefcase, Lightbulb, GraduationCap, Activity, ShieldAlert, AlertTriangle, Factory, FileWarning } from "lucide-react";
 
 const UseCases = () => {
   const goodUsesCases = [
     {
       title: "Pre-seed startups",
-      description: "Perfect for validating ideas before seeking investment."
+      description: "Perfect for validating ideas before seeking investment.",
+      icon: <UserCircle className="text-green-600" size={24} />
     },
     {
       title: "Corporate innovations",
-      description: "Rapidly test new product ideas within established companies."
+      description: "Rapidly test new product ideas within established companies.",
+      icon: <Building2 className="text-green-600" size={24} />
     },
     {
       title: "Personal side-hustle projects",
-      description: "Bring your ideas to life without quitting your day job."
+      description: "Bring your ideas to life without quitting your day job.",
+      icon: <Briefcase className="text-green-600" size={24} />
     },
     {
       title: "Idea validation",
-      description: "Test if your concept resonates with real customers before investing more."
+      description: "Test if your concept resonates with real customers before investing more.",
+      icon: <Lightbulb className="text-green-600" size={24} />
     },
     {
       title: "Educational MVP",
-      description: "Learn by building actual products in a structured way."
+      description: "Learn by building actual products in a structured way.",
+      icon: <GraduationCap className="text-green-600" size={24} />
     }
   ];
 
   const badUseCases = [
     {
       title: "Projects of critical safety importance",
-      description: "Medical, aerospace, or other safety-critical applications."
+      description: "Medical, aerospace, or other safety-critical applications.",
+      icon: <Activity className="text-red-500" size={24} />
     },
     {
       title: "Projects requiring perfect first deployment",
-      description: "When there's no room for iteration or errors."
+      description: "When there's no room for iteration or errors.",
+      icon: <ShieldAlert className="text-red-500" size={24} />
     },
     {
       title: "Complex enterprise systems",
-      description: "Large-scale systems with intricate integrations and requirements."
+      description: "Large-scale systems with intricate integrations and requirements.",
+      icon: <Factory className="text-red-500" size={24} />
     },
     {
       title: "Projects with non-negotiable regulatory requirements",
-      description: "Highly regulated industries where compliance takes precedence."
+      description: "Highly regulated industries where compliance takes precedence.",
+      icon: <FileWarning className="text-red-500" size={24} />
     }
   ];
 
@@ -60,7 +69,7 @@ const UseCases = () => {
                 {goodUsesCases.map((useCase, index) => (
                   <div key={index} className="flex items-start gap-4 minimal-card">
                     <div className="flex-shrink-0 mt-1">
-                      <Check className="text-green-600" size={18} />
+                      {useCase.icon}
                     </div>
                     <div>
                       <h3 className="font-medium text-lg">{useCase.title}</h3>
@@ -84,7 +93,7 @@ const UseCases = () => {
                 {badUseCases.map((useCase, index) => (
                   <div key={index} className="flex items-start gap-4 minimal-card">
                     <div className="flex-shrink-0 mt-1">
-                      <X className="text-red-500" size={18} />
+                      {useCase.icon}
                     </div>
                     <div>
                       <h3 className="font-medium text-lg">{useCase.title}</h3>

@@ -5,7 +5,6 @@ import Methodology from "@/components/Methodology";
 import Timeline from "@/components/Timeline";
 import UseCases from "@/components/UseCases";
 import Mindset from "@/components/Mindset";
-import CaseStudies from "@/components/CaseStudies";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -18,7 +17,6 @@ const Index = () => {
       <Timeline />
       <UseCases />
       <Mindset />
-      <CaseStudies />
       <CTA />
       <Footer />
     </div>
