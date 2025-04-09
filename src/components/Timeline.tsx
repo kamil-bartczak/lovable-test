@@ -141,61 +141,70 @@ const Timeline = () => {
           </p>
         </div>
         
-        {/* Vertical Timeline */}
+        {/* Vertical Timeline with steps */}
         <div className="relative max-w-5xl mx-auto">
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform -translate-x-1/2"></div>
+          
           {stages.map((stage) => (
             <div 
               key={stage.id}
-              className={`mb-12 p-8 rounded-lg shadow-sm transition-all duration-300 cursor-pointer ${stage.bgColor} border-l-4 ${stage.color} ${
-                activeStage === stage.id ? 'scale-105 shadow-md' : ''
-              }`}
-              onClick={() => setActiveStage(activeStage === stage.id ? null : stage.id)}
+              className={`mb-16 relative ${stage.id % 2 === 0 ? 'ml-auto pl-12' : 'mr-auto pr-12'} max-w-xl transition-all duration-500 hover:scale-105`}
             >
-              <div className="flex items-start gap-6">
-                <div className={`w-16 h-16 rounded-full bg-white border-2 ${stage.color} flex items-center justify-center flex-shrink-0 shadow-sm`}>
-                  {stage.icon}
-                </div>
-                
-                <div className="flex-1">
-                  <div className="flex justify-between items-start">
+              {/* Stage marker */}
+              <div 
+                className={`absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center z-20 
+                shadow-lg border-4 border-white ${stage.bgColor}`}
+                style={{ top: '50%' }}
+              >
+                <span className="text-lg font-bold">{stage.id}</span>
+              </div>
+              
+              {/* Stage card */}
+              <div 
+                className={`p-6 rounded-lg shadow-lg ${stage.bgColor} border-l-4 ${stage.color} cursor-pointer transition-all duration-300 hover:shadow-xl`}
+                onClick={() => setActiveStage(activeStage === stage.id ? null : stage.id)}
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`w-14 h-14 rounded-full bg-white flex items-center justify-center flex-shrink-0 ${stage.color}`}>
+                    {stage.icon}
+                  </div>
+                  
+                  <div className="flex-1">
                     <h3 className="text-2xl font-chakra font-bold mb-3 text-gray-900">
                       {stage.title}
                     </h3>
-                    <div className="text-lg font-bold bg-white w-8 h-8 flex items-center justify-center rounded-full shadow-sm">
-                      {stage.id}
-                    </div>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {stage.description}
-                  </p>
-                  
-                  {activeStage === stage.id && (
-                    <div className="mt-6">
-                      <div className="flex justify-between items-center mb-4">
-                        <h4 className="font-medium flex items-center gap-2">
-                          <Wrench size={16} /> Available Tools <span className="text-sm text-gray-500">({stage.tools.length} total)</span>
-                        </h4>
-                      </div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        {stage.tools.slice(0, 3).map((tool) => (
-                          <div 
-                            key={tool.id}
-                            className="bg-white p-4 rounded shadow-sm cursor-pointer hover:shadow-md transition-all"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setActiveTool(tool);
-                            }}
-                          >
-                            <div className="flex justify-between items-center">
-                              <h5 className="font-medium">{tool.name}</h5>
-                              <ChevronRight size={16} className="text-gray-400" />
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      {stage.description}
+                    </p>
+                    
+                    {activeStage === stage.id && (
+                      <div className="mt-6 animate-fade-in">
+                        <div className="flex justify-between items-center mb-4">
+                          <h4 className="font-medium flex items-center gap-2">
+                            <Wrench size={16} /> Available Tools <span className="text-sm text-gray-500">({stage.tools.length} total)</span>
+                          </h4>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                          {stage.tools.slice(0, 3).map((tool) => (
+                            <div 
+                              key={tool.id}
+                              className="bg-white p-4 rounded shadow-sm cursor-pointer hover:shadow-md transition-all transform hover:-translate-y-1"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setActiveTool(tool);
+                              }}
+                            >
+                              <div className="flex justify-between items-center">
+                                <h5 className="font-medium">{tool.name}</h5>
+                                <ChevronRight size={16} className="text-gray-400" />
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

@@ -55,10 +55,10 @@ const UseCases = () => {
 
   return (
     <section id="use-cases" className="py-20 relative overflow-hidden bg-[#f8f8f8]">
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="grid md:grid-cols-2 gap-16">
           {/* Good use cases */}
-          <div>
+          <div className="flex flex-col items-center">
             <div className="max-w-lg">
               <h2 className="text-3xl font-medium mb-2 text-gray-900 subtle-accent">
                 Who is Rabbit MVP For
@@ -71,7 +71,7 @@ const UseCases = () => {
                     <div className="flex-shrink-0 mt-1">
                       {useCase.icon}
                     </div>
-                    <div>
+                    <div className="text-left">
                       <h3 className="font-medium text-lg">{useCase.title}</h3>
                       <p className="text-gray-600">{useCase.description}</p>
                     </div>
@@ -82,7 +82,7 @@ const UseCases = () => {
           </div>
           
           {/* Bad use cases */}
-          <div>
+          <div className="flex flex-col items-center">
             <div className="max-w-lg">
               <h2 className="text-3xl font-medium mb-2 text-gray-900 subtle-accent">
                 Who is Rabbit MVP NOT For
@@ -95,7 +95,7 @@ const UseCases = () => {
                     <div className="flex-shrink-0 mt-1">
                       {useCase.icon}
                     </div>
-                    <div>
+                    <div className="text-left">
                       <h3 className="font-medium text-lg">{useCase.title}</h3>
                       <p className="text-gray-600">{useCase.description}</p>
                     </div>

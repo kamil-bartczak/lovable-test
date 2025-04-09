@@ -67,7 +67,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
           <div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-chakra font-light mb-8 leading-tight text-gray-900">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-chakra font-bold mb-8 leading-tight text-gray-900">
               <span className="block">Build your MVP</span>
               <span className="block">in just 7 days</span>
             </h1>
@@ -84,13 +84,14 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Minimal code line accent */}
+      {/* Community code line accent with shimmer effect */}
       <div className="absolute bottom-16 right-4 md:right-16 max-w-md text-xs md:text-sm font-fira text-gray-500 transform -rotate-1">
-        <pre className="opacity-60">
-          <code>
-            {`// Build. Validate. Launch.
-rabbitMVP.buildIn(7).days();`}
+        <pre className="opacity-80 relative overflow-hidden">
+          <code className="relative z-10">
+            {`// Open Community Approach
+rabbitMVP.buildWith(community).succeed();`}
           </code>
+          <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 animate-shimmer" />
         </pre>
       </div>
     </section>

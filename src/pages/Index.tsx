@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Methodology from "@/components/Methodology";
+import OpenCommunity from "@/components/OpenCommunity";
 import Timeline from "@/components/Timeline";
 import UseCases from "@/components/UseCases";
 import Mindset from "@/components/Mindset";
@@ -14,6 +15,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Methodology />
+      <OpenCommunity />
       <Timeline />
       <UseCases />
       <Mindset />
