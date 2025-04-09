@@ -7,35 +7,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 96%;
+    --foreground: 240 10% 3.9%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 164 82% 51%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 291 60% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 291 60% 42%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 164 82% 51%;
+    --secondary-foreground: 240 10% 3.9%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
 
     --accent: 16 100% 54%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 164 82% 51%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 291 60% 42%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
   }
 }
 
@@ -45,7 +45,7 @@
   }
 
   body {
-    @apply bg-rabbit-dark text-foreground font-inter;
+    @apply bg-background text-foreground font-inter;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -58,50 +58,24 @@
 }
 
 @layer components {
-  .neon-text {
-    text-shadow: 0 0 5px rgba(32, 227, 178, 0.8), 0 0 10px rgba(32, 227, 178, 0.5);
+  .minimal-card {
+    @apply bg-white border border-gray-100 shadow-sm rounded-md p-6;
   }
 
-  .neon-text-purple {
-    text-shadow: 0 0 5px rgba(156, 39, 176, 0.8), 0 0 10px rgba(156, 39, 176, 0.5);
+  .subtle-accent {
+    @apply relative;
   }
 
-  .neon-text-orange {
-    text-shadow: 0 0 5px rgba(255, 87, 34, 0.8), 0 0 10px rgba(255, 87, 34, 0.5);
+  .subtle-accent::after {
+    @apply content-[''] absolute w-10 h-0.5 bg-purple-700 left-0 -bottom-2;
   }
 
-  .neon-border {
-    box-shadow: 0 0 5px rgba(32, 227, 178, 0.8), 0 0 10px rgba(32, 227, 178, 0.3);
-  }
-
-  .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
-  }
-
-  .highlight-gradient {
-    @apply bg-gradient-to-r from-rabbit-turquoise via-rabbit-purple to-rabbit-orange bg-clip-text text-transparent;
-  }
-
-  .bg-grid {
-    background-image: 
-      linear-gradient(to right, rgba(156, 39, 176, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(156, 39, 176, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-  }
-
-  .button-glow {
-    @apply relative overflow-hidden;
-  }
-
-  .button-glow::before {
-    @apply content-[''] absolute inset-0 bg-gradient-to-r from-rabbit-turquoise via-rabbit-purple to-rabbit-orange;
-    filter: blur(15px);
-    transition: all 0.5s ease;
-    opacity: 0;
-  }
-
-  .button-glow:hover::before {
-    opacity: 0.5;
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: rgba(156, 39, 176, 0.3);
   }
 }
 
@@ -111,6 +85,6 @@
     width: 3px;
     height: 3px;
     border-radius: 50%;
-    background-color: rgba(32, 227, 178, 0.5);
+    background-color: rgba(156, 39, 176, 0.3);
   }
 }

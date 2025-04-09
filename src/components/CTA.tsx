@@ -33,28 +33,27 @@ const CTA = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-rabbit-orange/10 to-rabbit-dark pointer-events-none" />
-      
+    <section className="py-20 relative overflow-hidden bg-white">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="glass p-8 md:p-12 rounded-xl max-w-5xl mx-auto">
+        <div className="minimal-card max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 neon-text">
+              <h2 className="text-3xl md:text-4xl font-medium mb-2 text-gray-900 subtle-accent">
                 Ready to build your MVP in 7 days?
               </h2>
-              <p className="text-xl text-gray-300 mb-6">
+              <div className="mb-6"></div>
+              <p className="text-xl text-gray-700 mb-6">
                 Start using Rabbit MVP methodology today and transform your ideas 
                 into functional products at unprecedented speed.
               </p>
-              <Button className="bg-rabbit-turquoise hover:bg-rabbit-turquoise/80 text-black font-medium button-glow text-lg px-8 py-6">
+              <Button className="bg-purple-700 hover:bg-purple-800 text-white font-normal text-lg px-8 py-6">
                 Get Started <ArrowRight className="ml-2" size={20} />
               </Button>
             </div>
             
             <div className="flex flex-col justify-center">
-              <h3 className="text-xl font-bold mb-4">Stay updated with Rabbit MVP</h3>
-              <p className="text-gray-400 mb-4">
+              <h3 className="text-xl font-medium mb-4">Stay updated with Rabbit MVP</h3>
+              <p className="text-gray-600 mb-4">
                 Subscribe to our newsletter for methodology updates, success stories, 
                 and exclusive resources.
               </p>
@@ -63,11 +62,11 @@ const CTA = () => {
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
+                  className="bg-white border-gray-300 text-gray-800 placeholder:text-gray-500"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <Button type="submit" className="bg-rabbit-purple hover:bg-rabbit-purple/80">
+                <Button type="submit" className="bg-purple-700 hover:bg-purple-800 text-white">
                   Subscribe <Send className="ml-2" size={16} />
                 </Button>
               </form>

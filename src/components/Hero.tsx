@@ -7,7 +7,7 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Create particles
+    // Create minimal particles (much fewer than before)
     const createParticles = () => {
       if (!heroRef.current) return;
       
@@ -15,7 +15,8 @@ const Hero = () => {
       const heroHeight = heroRef.current.offsetHeight;
       const heroWidth = heroRef.current.offsetWidth;
       
-      for (let i = 0; i < 50; i++) {
+      // Reduced number of particles for minimalism
+      for (let i = 0; i < 15; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle animate-particle-move';
         
@@ -23,17 +24,18 @@ const Hero = () => {
         particle.style.top = `${Math.random() * heroHeight}px`;
         particle.style.left = `${Math.random() * heroWidth}px`;
         
-        // Random size
-        const size = Math.random() * 3 + 1;
+        // Smaller, more subtle size
+        const size = Math.random() * 2 + 0.5;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
         
-        // Random color
-        const colors = ['#20E3B2', '#9C27B0', '#FF5722'];
+        // More muted colors
+        const colors = ['#9C27B0', '#20E3B2', '#FF5722'];
         particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.opacity = '0.3';
         
-        // Random animation duration
-        const duration = Math.random() * 20 + 10;
+        // Slower, more subtle animation
+        const duration = Math.random() * 30 + 15;
         particle.style.animationDuration = `${duration}s`;
         
         // Random animation delay
@@ -58,30 +60,31 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center bg-grid overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#f5f5f5]">
       <div ref={heroRef} className="absolute inset-0 pointer-events-none" />
       
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-rabbit-purple/10 to-rabbit-dark pointer-events-none" />
+      {/* Very subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#f5f5f5] pointer-events-none" />
       
       <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
-        <div className="max-w-4xl">
-          <div className="mb-8 animate-float">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-glow">
-              <span className="neon-text">MVP in 7 days</span> <br />
-              <span className="highlight-gradient">with AI as co-founder</span>
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-chakra font-light mb-6 text-gray-900">
+              <span className="block">Build your MVP</span>
+              <span className="block mt-2">in just 7 days</span>
+              <span className="block mt-2 text-2xl md:text-3xl lg:text-4xl font-normal text-purple-700">A methodology for the modern founder</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
-              Rabbit MVP is a proprietary methodology to create Minimum Viable Products 
-              at lightning speed using AI as a key accelerator.
+            <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-2xl leading-relaxed">
+              Rabbit MVP is a structured methodology to create Minimum Viable Products 
+              with speed and precision. Accelerate your path to market validation.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-rabbit-turquoise hover:bg-rabbit-turquoise/80 text-black font-medium button-glow text-lg px-8 py-6">
+              <Button className="bg-white border border-gray-200 hover:bg-gray-50 text-gray-900 shadow-sm font-medium text-lg px-8 py-6">
                 Get Started <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Button variant="outline" className="border-rabbit-purple/70 text-gray-200 hover:bg-rabbit-purple/20 text-lg px-8 py-6">
+              <Button variant="outline" className="border-purple-700 text-purple-700 hover:bg-purple-50 text-lg px-8 py-6">
                 Learn More
               </Button>
             </div>
@@ -89,14 +92,12 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Code line accent */}
-      <div className="absolute bottom-16 right-4 md:right-16 max-w-md text-xs md:text-sm font-fira text-rabbit-turquoise/70 transform rotate-3">
-        <pre className="opacity-70">
+      {/* Minimal code line accent */}
+      <div className="absolute bottom-16 right-4 md:right-16 max-w-md text-xs md:text-sm font-fira text-gray-500 transform -rotate-1">
+        <pre className="opacity-60">
           <code>
-            {`const rabbit = new RabbitMVP();
-rabbit.validateIdea(idea);
-rabbit.buildMVP({ days: 7 });
-rabbit.launch();`}
+            {`// Build. Validate. Launch.
+rabbitMVP.buildIn(7).days();`}
           </code>
         </pre>
       </div>
