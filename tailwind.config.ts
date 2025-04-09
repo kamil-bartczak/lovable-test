@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				rabbit: {
+					dark: '#121212',
+					turquoise: '#20E3B2',
+					purple: '#9C27B0',
+					orange: '#FF5722'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +74,11 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				chakra: ['"Chakra Petch"', 'sans-serif'],
+				inter: ['Inter', 'sans-serif'],
+				fira: ['"Fira Code"', 'monospace']
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +96,31 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				glow: {
+					'0%, 100%': { textShadow: '0 0 5px rgba(32, 227, 178, 0.8), 0 0 10px rgba(32, 227, 178, 0.5)' },
+					'50%': { textShadow: '0 0 15px rgba(32, 227, 178, 1), 0 0 20px rgba(32, 227, 178, 0.8)' }
+				},
+				pulse: {
+					'0%, 100%': { opacity: 1 },
+					'50%': { opacity: 0.5 }
+				},
+				'particle-move': {
+					'0%': { transform: 'translate3d(0, 0, 0)' },
+					'100%': { transform: 'translate3d(100px, 100px, 0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				float: 'float 6s ease-in-out infinite',
+				glow: 'glow 2s ease-in-out infinite',
+				pulse: 'pulse 2s ease-in-out infinite',
+				'particle-move': 'particle-move 10s ease-in-out infinite alternate'
 			}
 		}
 	},
