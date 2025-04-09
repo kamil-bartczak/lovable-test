@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Lightbulb, Clock, Rabbit, Brain, ArrowRight, Filter, Target, Edit, Zap, MessageSquare } from "lucide-react";
 
@@ -76,36 +75,33 @@ const Mindset = () => {
   ];
 
   return (
-    <section id="mindset" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-rabbit-turquoise/5 to-rabbit-dark pointer-events-none" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 neon-text">Rabbit Mindset</h2>
-          <p className="text-xl text-gray-300">
-            The 10 principles that guide the Rabbit MVP methodology and mindset.
-            These principles will help you stay focused and achieve results quickly.
+    <section id="mindset" className="py-20 relative overflow-hidden bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-4xl font-chakra font-bold mb-6 text-gray-900">Rabbit Mindset</h2>
+          <p className="text-xl text-gray-600">
+            Ten core principles that guide rapid and effective MVP development.
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {principles.map((principle) => (
             <div
               key={principle.id}
-              className={`glass p-4 rounded-xl cursor-pointer transition-all duration-300 ${
+              className={`bg-white p-6 rounded-lg transition-all duration-300 cursor-pointer border ${
                 activePrinciple === principle.id 
-                  ? 'border-rabbit-turquoise shadow-md shadow-rabbit-turquoise/20' 
-                  : 'hover:border-rabbit-turquoise/50'
+                  ? 'border-rabbit-purple shadow-lg' 
+                  : 'border-gray-100 hover:border-rabbit-purple/50'
               }`}
               onClick={() => setActivePrinciple(principle.id === activePrinciple ? null : principle.id)}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-rabbit-turquoise/10 flex items-center justify-center mb-3">
+                <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center mb-4">
                   {principle.icon}
                 </div>
-                <h3 className="font-bold mb-1">{principle.title}</h3>
+                <h3 className="font-chakra font-bold text-gray-900 mb-2">{principle.title}</h3>
                 {activePrinciple === principle.id && (
-                  <p className="text-gray-400 text-sm mt-2">{principle.description}</p>
+                  <p className="text-gray-600 text-sm mt-2">{principle.description}</p>
                 )}
               </div>
             </div>
