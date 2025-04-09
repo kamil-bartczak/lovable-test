@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Building, Users, Lightbulb, Code, Layers, TestTube, Rocket, Tool, ChevronRight, X } from "lucide-react";
+import { Building, Users, Lightbulb, Code, Layers, TestTube, Rocket, Wrench, ChevronRight, X } from "lucide-react";
 
 interface Tool {
   id: number;
@@ -173,7 +173,7 @@ const Timeline = () => {
                     <div className="mt-6">
                       <div className="flex justify-between items-center mb-4">
                         <h4 className="font-medium flex items-center gap-2">
-                          <Tool size={16} /> Available Tools <span className="text-sm text-gray-500">({stage.tools.length} total)</span>
+                          <Wrench size={16} /> Available Tools <span className="text-sm text-gray-500">({stage.tools.length} total)</span>
                         </h4>
                       </div>
                       
