@@ -124,7 +124,7 @@ const Timeline = () => {
           description: "A strategic management template for developing new or documenting existing business models.", 
           link: "#", 
           tags: [{ id: 1, name: "Strategy", color: "bg-blue-100 text-blue-700" }],
-          longDescription: "The Business Model Canvas is a strategic management template used for developing new business models and documenting existing ones. It offers a visual chart with elements describing a firm's value proposition, infrastructure, customers, and finances, helping businesses align their activities by illustrating potential trade-offs.",
+          longDescription: "The Business Model Canvas is a strategic management template used for developing new business models and documenting existing ones. It helps visualize the key components of your business on a single page, making it easier to identify and validate your business hypothesis.",
           benefits: [
             "Provides a holistic view of your entire business on one page",
             "Helps identify connections between different business components",
@@ -143,13 +143,96 @@ const Timeline = () => {
             { title: "Video Tutorial: Filling Out Your Canvas", url: "#" }
           ]
         },
-        { id: 1002, name: "Value Proposition Canvas", category: 101, description: "A tool to ensure a product or service is positioned around what the customer values and needs.", link: "#", tags: [{ id: 1, name: "Strategy", color: "bg-blue-100 text-blue-700" }] },
-        { id: 1003, name: "Jobs To Be Done Framework", category: 102, description: "A framework for understanding why customers 'hire' products and services to solve problems.", link: "#", tags: [{ id: 2, name: "Research", color: "bg-indigo-100 text-indigo-700" }] },
-        { id: 1004, name: "Lean Canvas", category: 101, description: "A 1-page business plan template that helps you deconstruct your idea into key assumptions.", link: "#", tags: [{ id: 1, name: "Strategy", color: "bg-blue-100 text-blue-700" }] },
-        { id: 1005, name: "Market Sizing Calculator", category: 102, description: "A tool to estimate the potential size of your target market.", link: "#", tags: [{ id: 2, name: "Research", color: "bg-indigo-100 text-indigo-700" }] },
-        { id: 1006, name: "Competitor Analysis Template", category: 102, description: "A structured way to analyze and compare your business against competitors.", link: "#", tags: [{ id: 2, name: "Research", color: "bg-indigo-100 text-indigo-700" }] },
-        { id: 1007, name: "SWOT Analysis Tool", category: 103, description: "Identify Strengths, Weaknesses, Opportunities, and Threats for your business concept.", link: "#", tags: [{ id: 3, name: "Planning", color: "bg-violet-100 text-violet-700" }] },
-        { id: 1008, name: "Customer Persona Creator", category: 102, description: "Build detailed profiles of your target customers to better understand their needs.", link: "#", tags: [{ id: 2, name: "Research", color: "bg-indigo-100 text-indigo-700" }] },
+        { 
+          id: 1002, 
+          name: "Market Analysis with AI", 
+          category: 102, 
+          description: "Use AI tools to analyze market trends, competition, and identify potential opportunities.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Research", color: "bg-indigo-100 text-indigo-700" }],
+          benefits: [
+            "Save time on market research with AI-powered analysis",
+            "Identify patterns and trends that might be missed manually",
+            "Get data-driven insights to validate your business hypothesis",
+            "Compare your idea against existing competitors"
+          ],
+          howTo: [
+            "Define clear research questions about your market",
+            "Use AI tools to gather and analyze market data",
+            "Focus on identifying unique gaps and opportunities",
+            "Synthesize findings into actionable insights"
+          ]
+        },
+        { 
+          id: 1003, 
+          name: "Customer Segmentation", 
+          category: 102, 
+          description: "Identify and define your target customer segments with specific characteristics and needs.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Research", color: "bg-indigo-100 text-indigo-700" }],
+          benefits: [
+            "Focus your MVP on specific user needs",
+            "Create more targeted value propositions",
+            "Optimize resource allocation for highest impact segments",
+            "Develop more effective marketing strategies"
+          ]
+        },
+        { 
+          id: 1004, 
+          name: "AI-Assisted SWOT Analysis", 
+          category: 103, 
+          description: "Use AI to help identify your business's Strengths, Weaknesses, Opportunities, and Threats.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Strategy", color: "bg-blue-100 text-blue-700" }],
+          benefits: [
+            "Get objective insights about your business positioning",
+            "Identify hidden strengths and opportunities using AI analysis",
+            "Anticipate potential challenges early in development",
+            "Create strategies to mitigate risks and leverage advantages"
+          ]
+        },
+        { 
+          id: 1005, 
+          name: "Business Hypothesis Generator", 
+          category: 101, 
+          description: "Create and prioritize 5-10 key business hypotheses that need validation.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Strategy", color: "bg-blue-100 text-blue-700" }],
+          benefits: [
+            "Focus validation efforts on the most critical assumptions",
+            "Build a structured approach to testing business viability",
+            "Reduce risk by identifying and addressing key uncertainties",
+            "Create a clear roadmap for validation activities"
+          ]
+        },
+        { 
+          id: 1006, 
+          name: "Validation Plan Builder", 
+          category: 103, 
+          description: "Create a structured plan to validate your key business hypotheses efficiently.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Planning", color: "bg-violet-100 text-violet-700" }],
+          benefits: [
+            "Organize validation activities in a systematic way",
+            "Define clear success criteria for each hypothesis",
+            "Optimize resource allocation for validation",
+            "Track progress and learn from validation results"
+          ]
+        },
+        { 
+          id: 1007, 
+          name: "Success Metrics Dashboard", 
+          category: 103, 
+          description: "Identify and track the key metrics that will determine the success of your MVP.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Planning", color: "bg-violet-100 text-violet-700" }],
+          benefits: [
+            "Focus on measurable outcomes rather than just features",
+            "Create alignment on what success looks like",
+            "Enable data-driven decision making",
+            "Set benchmarks for evaluating progress"
+          ]
+        },
       ]
     },
     {
@@ -166,13 +249,124 @@ const Timeline = () => {
         { id: 203, name: "Analytics", color: "bg-pink-100 text-pink-700", icon: <Database size={16} />, description: "Tools for measuring and analyzing user behavior" }
       ],
       tools: [
-        { id: 2001, name: "Customer Interviews", category: 201, description: "Structured conversations with potential customers to gather insights and validate assumptions.", link: "#", tags: [{ id: 1, name: "Research", color: "bg-purple-100 text-purple-700" }] },
-        { id: 2002, name: "Landing Page Tests", category: 202, description: "Simple web pages designed to test interest in a product before it's built.", link: "#", tags: [{ id: 2, name: "Testing", color: "bg-fuchsia-100 text-fuchsia-700" }] },
-        { id: 2003, name: "Problem Validation Surveys", category: 201, description: "Questionnaires designed to confirm if your target market experiences the problem you're solving.", link: "#", tags: [{ id: 1, name: "Research", color: "bg-purple-100 text-purple-700" }] },
-        { id: 2004, name: "Fake Door Testing", category: 202, description: "A method to measure interest in a product or feature before building it.", link: "#", tags: [{ id: 2, name: "Testing", color: "bg-fuchsia-100 text-fuchsia-700" }] },
-        { id: 2005, name: "Empathy Mapping", category: 201, description: "A collaborative tool teams can use to gain insight into their customers.", link: "#", tags: [{ id: 1, name: "Research", color: "bg-purple-100 text-purple-700" }] },
-        { id: 2006, name: "User Journey Mapping", category: 201, description: "A visual representation of the user's experience with your product from start to finish.", link: "#", tags: [{ id: 1, name: "Research", color: "bg-purple-100 text-purple-700" }] },
-        { id: 2007, name: "Conversion Funnel Analysis", category: 203, description: "Track how visitors move through your landing page to identify optimization opportunities.", link: "#", tags: [{ id: 3, name: "Analytics", color: "bg-pink-100 text-pink-700" }] },
+        { 
+          id: 2001, 
+          name: "AI Interview Script Generator", 
+          category: 201, 
+          description: "Create effective customer interview scripts with AI to validate your business hypotheses.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Research", color: "bg-purple-100 text-purple-700" }],
+          benefits: [
+            "Ask the right questions to validate assumptions",
+            "Eliminate bias in your interview approach",
+            "Structure interviews for maximum insight",
+            "Save time on interview preparation"
+          ],
+          howTo: [
+            "Define the key hypotheses you need to validate",
+            "Use AI to generate question frameworks",
+            "Customize questions for your specific context",
+            "Include both open-ended and specific questions"
+          ]
+        },
+        { 
+          id: 2002, 
+          name: "Customer Finder AI", 
+          category: 201, 
+          description: "Identify 5-10 potential customers for interviews using AI-powered targeting.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Research", color: "bg-purple-100 text-purple-700" }],
+          benefits: [
+            "Find qualified interview candidates quickly",
+            "Target people who match your customer segments",
+            "Reduce time spent on recruitment",
+            "Access diverse perspectives for validation"
+          ]
+        },
+        { 
+          id: 2003, 
+          name: "5-Question Survey Builder", 
+          category: 202, 
+          description: "Create concise, effective surveys with maximum 5 questions to validate key hypotheses.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Testing", color: "bg-fuchsia-100 text-fuchsia-700" }],
+          benefits: [
+            "Higher completion rates with focused questions",
+            "Direct validation of specific assumptions",
+            "Quantitative data to complement interviews",
+            "Easy distribution and data collection"
+          ]
+        },
+        { 
+          id: 2004, 
+          name: "Remote Interview Platform", 
+          category: 201, 
+          description: "Tools for conducting and recording 3-5 remote customer interviews efficiently.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Research", color: "bg-purple-100 text-purple-700" }],
+          benefits: [
+            "Schedule and conduct interviews from anywhere",
+            "Record sessions for detailed analysis",
+            "Share interviews with team members",
+            "Streamline the interview process"
+          ]
+        },
+        { 
+          id: 2005, 
+          name: "Online Survey Publisher", 
+          category: 202, 
+          description: "Publish and distribute your validation survey to gather at least 10 responses.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Testing", color: "bg-fuchsia-100 text-fuchsia-700" }],
+          benefits: [
+            "Reach a broader audience for validation",
+            "Automate response collection",
+            "Generate basic analytics on responses",
+            "Easily share and promote your survey"
+          ]
+        },
+        { 
+          id: 2006, 
+          name: "Community Interest Analyzer", 
+          category: 203, 
+          description: "Analyze interest and feedback from relevant online forums and communities.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Analytics", color: "bg-pink-100 text-pink-700" }],
+          benefits: [
+            "Tap into existing communities for feedback",
+            "Gauge interest without building anything",
+            "Identify common pain points and desires",
+            "Find early adopters and champions"
+          ]
+        },
+        { 
+          id: 2007, 
+          name: "AI Feedback Analyzer", 
+          category: 203, 
+          description: "Use AI to analyze customer feedback and identify patterns and insights.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Analytics", color: "bg-pink-100 text-pink-700" }],
+          benefits: [
+            "Identify patterns across different feedback sources",
+            "Uncover hidden insights in qualitative data",
+            "Prioritize feature requests objectively",
+            "Make data-driven decisions for your MVP"
+          ]
+        },
+        { 
+          id: 2008, 
+          name: "Minimum Viable Features (MVF) Builder", 
+          category: 202, 
+          description: "Define the minimum set of features required to solve the core customer problem.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Testing", color: "bg-fuchsia-100 text-fuchsia-700" }],
+          benefits: [
+            "Focus development on what matters most",
+            "Avoid feature bloat in your MVP",
+            "Create clear scope for implementation",
+            "Align features with validated customer needs"
+          ]
+        },
       ]
     },
     {
@@ -189,59 +383,402 @@ const Timeline = () => {
         { id: 303, name: "Planning", color: "bg-orange-100 text-orange-700", icon: <FileText size={16} />, description: "Tools for planning and organizing your solution" }
       ],
       tools: [
-        { id: 3001, name: "Feature Prioritization Matrix", category: 303, description: "A tool to help decide which features to include in your MVP based on impact and effort.", link: "#", tags: [{ id: 3, name: "Planning", color: "bg-orange-100 text-orange-700" }] },
-        { id: 3002, name: "User Stories Workshop", category: 301, description: "A method to capture product functionality from the end-user perspective.", link: "#", tags: [{ id: 1, name: "UX Design", color: "bg-amber-100 text-amber-700" }] },
-        { id: 3003, name: "Wireframing Tools", category: 302, description: "Tools for creating low-fidelity mockups of your product interface.", link: "#", tags: [{ id: 2, name: "UI Design", color: "bg-yellow-100 text-yellow-700" }] },
-        { id: 3004, name: "User Flow Diagrams", category: 301, description: "Visual representations of the user's journey through your product.", link: "#", tags: [{ id: 1, name: "UX Design", color: "bg-amber-100 text-amber-700" }] },
-        { id: 3005, name: "Design Sprint Methodology", category: 303, description: "A time-constrained process to rapidly design and test a prototype.", link: "#", tags: [{ id: 3, name: "Planning", color: "bg-orange-100 text-orange-700" }] },
-        { id: 3006, name: "Information Architecture Planning", category: 301, description: "Organize and structure content to create intuitive navigation and usability.", link: "#", tags: [{ id: 1, name: "UX Design", color: "bg-amber-100 text-amber-700" }] },
-        { id: 3007, name: "UI Component Library", category: 302, description: "Pre-built interface elements to ensure consistency across your product.", link: "#", tags: [{ id: 2, name: "UI Design", color: "bg-yellow-100 text-yellow-700" }] },
+        { 
+          id: 3001, 
+          name: "AI User Journey Mapper", 
+          category: 301, 
+          description: "Use AI to map out the user's journey through your product from start to finish.", 
+          link: "#", 
+          tags: [{ id: 1, name: "UX Design", color: "bg-amber-100 text-amber-700" }],
+          benefits: [
+            "Visualize the complete user experience",
+            "Identify potential pain points before building",
+            "Ensure a coherent flow through the product",
+            "Focus on key user interactions for MVP"
+          ]
+        },
+        { 
+          id: 3002, 
+          name: "Solution Architecture Designer", 
+          category: 303, 
+          description: "Design the technical architecture of your MVP solution.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Planning", color: "bg-orange-100 text-orange-700" }],
+          benefits: [
+            "Create a solid foundation for development",
+            "Visualize technical components and connections",
+            "Plan for scalability from the beginning",
+            "Make informed technology choices"
+          ]
+        },
+        { 
+          id: 3003, 
+          name: "Tech Stack Selector", 
+          category: 303, 
+          description: "Choose the optimal combination of technologies and tools for your MVP.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Planning", color: "bg-orange-100 text-orange-700" }],
+          benefits: [
+            "Select technologies based on project requirements",
+            "Balance speed of development and scalability",
+            "Identify pre-built components and libraries",
+            "Avoid technology compatibility issues"
+          ]
+        },
+        { 
+          id: 3004, 
+          name: "AI UI/UX Generator", 
+          category: 302, 
+          description: "Generate user interface designs and UX flows with AI assistance.", 
+          link: "#", 
+          tags: [{ id: 2, name: "UI Design", color: "bg-yellow-100 text-yellow-700" }],
+          benefits: [
+            "Create professional designs without a designer",
+            "Generate multiple design options quickly",
+            "Ensure UI consistency across the application",
+            "Implement design best practices automatically"
+          ]
+        },
+        { 
+          id: 3005, 
+          name: "Wireframe Creator", 
+          category: 302, 
+          description: "Create low-fidelity mockups of your key screens and user flows.", 
+          link: "#", 
+          tags: [{ id: 2, name: "UI Design", color: "bg-yellow-100 text-yellow-700" }],
+          benefits: [
+            "Visualize interface concepts quickly",
+            "Iterate on designs before coding",
+            "Focus on layout and functionality without details",
+            "Create a blueprint for development"
+          ]
+        },
+        { 
+          id: 3006, 
+          name: "AI Logo & Visual Identity Generator", 
+          category: 302, 
+          description: "Create a basic logo and visual identity for your MVP with AI.", 
+          link: "#", 
+          tags: [{ id: 2, name: "UI Design", color: "bg-yellow-100 text-yellow-700" }],
+          benefits: [
+            "Establish a professional brand identity quickly",
+            "Generate multiple design options",
+            "Create consistent visual elements",
+            "Build customer recognition from the start"
+          ]
+        },
+        { 
+          id: 3007, 
+          name: "Task Decomposer", 
+          category: 303, 
+          description: "Break down your design into concrete, actionable development tasks.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Planning", color: "bg-orange-100 text-orange-700" }],
+          benefits: [
+            "Convert designs into specific implementation tasks",
+            "Create realistic work estimates",
+            "Identify dependencies between components",
+            "Facilitate efficient task allocation"
+          ]
+        },
+        { 
+          id: 3008, 
+          name: "AI Prompt Engineer", 
+          category: 301, 
+          description: "Prepare effective AI prompts to assist with coding and implementation.", 
+          link: "#", 
+          tags: [{ id: 1, name: "UX Design", color: "bg-amber-100 text-amber-700" }],
+          benefits: [
+            "Maximize AI assistance during development",
+            "Create consistent code generation patterns",
+            "Speed up implementation of common features",
+            "Reduce manual coding time"
+          ]
+        },
+        { 
+          id: 3009, 
+          name: "Dev Environment Configurator", 
+          category: 303, 
+          description: "Set up and configure your development environment for efficient implementation.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Planning", color: "bg-orange-100 text-orange-700" }],
+          benefits: [
+            "Start development with the right tools in place",
+            "Standardize environment across team members",
+            "Avoid setup-related delays and issues",
+            "Include testing and deployment workflows"
+          ]
+        },
       ]
     },
     {
       id: 4,
       title: "Core Implementation",
-      description: "Build the essential features using AI acceleration. Focus on functionality over perfection.",
+      description: "Build the essential features using low-code/no-code solutions. Focus on functionality over perfection.",
       icon: <Code size={36} />,
       color: "text-green-600",
       colorStart: "#16a34a",
       colorEnd: "#15803d",
       categories: [
         { id: 401, name: "Development", color: "bg-green-100 text-green-700", icon: <Code size={16} />, description: "Tools for building your product" },
-        { id: 402, name: "AI Tools", color: "bg-emerald-100 text-emerald-700", icon: <BrainCircuit size={16} />, description: "AI-powered tools to accelerate development" },
-        { id: 403, name: "Integration", color: "bg-teal-100 text-teal-700", icon: <Link2 size={16} />, description: "Tools for connecting with external services" }
+        { id: 402, name: "No-Code", color: "bg-emerald-100 text-emerald-700", icon: <BrainCircuit size={16} />, description: "No-code tools to accelerate development" },
+        { id: 403, name: "Data", color: "bg-teal-100 text-teal-700", icon: <Database size={16} />, description: "Tools for managing your data" }
       ],
       tools: [
-        { id: 4001, name: "No-Code Tools", category: 401, description: "Platforms that allow you to build applications without writing code.", link: "#", tags: [{ id: 1, name: "Development", color: "bg-green-100 text-green-700" }] },
-        { id: 4002, name: "AI Code Generation", category: 402, description: "Tools that use AI to generate code based on natural language descriptions.", link: "#", tags: [{ id: 2, name: "AI Tools", color: "bg-emerald-100 text-emerald-700" }] },
-        { id: 4003, name: "UI Component Libraries", category: 401, description: "Pre-built interface components that can be quickly assembled into applications.", link: "#", tags: [{ id: 1, name: "Development", color: "bg-green-100 text-green-700" }] },
-        { id: 4004, name: "API Integration Platforms", category: 403, description: "Tools that simplify connecting your application with third-party services.", link: "#", tags: [{ id: 3, name: "Integration", color: "bg-teal-100 text-teal-700" }] },
-        { id: 4005, name: "Continuous Integration Tools", category: 401, description: "Systems that automatically merge code changes and run tests.", link: "#", tags: [{ id: 1, name: "Development", color: "bg-green-100 text-green-700" }] },
-        { id: 4006, name: "Version Control Systems", category: 401, description: "Track and manage changes to your codebase efficiently.", link: "#", tags: [{ id: 1, name: "Development", color: "bg-green-100 text-green-700" }] },
-        { id: 4007, name: "Development Environment Setup", category: 401, description: "Configure your workstation for efficient development.", link: "#", tags: [{ id: 1, name: "Development", color: "bg-green-100 text-green-700" }] },
+        { 
+          id: 4001, 
+          name: "No-Code Platform Selector", 
+          category: 402, 
+          description: "Choose the right no-code/low-code platform for your specific MVP needs.", 
+          link: "#", 
+          tags: [{ id: 2, name: "No-Code", color: "bg-emerald-100 text-emerald-700" }],
+          benefits: [
+            "Find the optimal platform for your use case",
+            "Compare features of top no-code solutions",
+            "Evaluate trade-offs between platforms",
+            "Select based on your specific MVP requirements"
+          ]
+        },
+        { 
+          id: 4002, 
+          name: "No-Code App Builder", 
+          category: 402, 
+          description: "Configure the basic structure of your application using drag-and-drop tools.", 
+          link: "#", 
+          tags: [{ id: 2, name: "No-Code", color: "bg-emerald-100 text-emerald-700" }],
+          benefits: [
+            "Build functional apps without coding",
+            "Create custom workflows visually",
+            "Iterate rapidly on different solutions",
+            "Generate a working product in days, not weeks"
+          ]
+        },
+        { 
+          id: 4003, 
+          name: "Template Marketplace", 
+          category: 401, 
+          description: "Access pre-built templates and components instead of building from scratch.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Development", color: "bg-green-100 text-green-700" }],
+          benefits: [
+            "Save time with ready-made solutions",
+            "Implement best practices automatically",
+            "Customize templates to your specific needs",
+            "Access professionally designed components"
+          ]
+        },
+        { 
+          id: 4004, 
+          name: "No-Code Database Builder", 
+          category: 403, 
+          description: "Configure your database structure without writing complex queries.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Data", color: "bg-teal-100 text-teal-700" }],
+          benefits: [
+            "Create relational data structures visually",
+            "Define custom fields and relationships",
+            "Import existing data easily",
+            "Automate database maintenance"
+          ]
+        },
+        { 
+          id: 4005, 
+          name: "AI Content Generator", 
+          category: 401, 
+          description: "Generate text content and visual elements for your app with AI.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Development", color: "bg-green-100 text-green-700" }],
+          benefits: [
+            "Create professional content quickly",
+            "Maintain consistent tone and style",
+            "Generate placeholder content for testing",
+            "Customize content for your target audience"
+          ]
+        },
+        { 
+          id: 4006, 
+          name: "Visual Interface Builder", 
+          category: 402, 
+          description: "Create your application interface using drag-and-drop tools.", 
+          link: "#", 
+          tags: [{ id: 2, name: "No-Code", color: "bg-emerald-100 text-emerald-700" }],
+          benefits: [
+            "Design interfaces without coding",
+            "Ensure responsive design across devices",
+            "Implement consistent styling automatically",
+            "Preview changes in real-time"
+          ]
+        },
+        { 
+          id: 4007, 
+          name: "Workflow Automator", 
+          category: 401, 
+          description: "Create automated processes and workflows for your application.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Development", color: "bg-green-100 text-green-700" }],
+          benefits: [
+            "Automate repetitive tasks and processes",
+            "Create trigger-based actions visually",
+            "Connect different parts of your application",
+            "Implement complex business logic without code"
+          ]
+        },
+        { 
+          id: 4008, 
+          name: "Quick Fix Toolkit", 
+          category: 401, 
+          description: "Identify and fix the most critical issues in your implementation.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Development", color: "bg-green-100 text-green-700" }],
+          benefits: [
+            "Diagnose common no-code implementation problems",
+            "Apply proven solutions to typical issues",
+            "Optimize application performance",
+            "Improve user experience quickly"
+          ]
+        },
       ]
     },
     {
       id: 5,
       title: "Feature Expansion",
-      description: "Add secondary features based on validated priorities. Keep expanding within the 7-day timeframe.",
+      description: "Expand functionality with minimal coding, using plugins and integrations. Prepare for user testing.",
       icon: <Layers size={36} />,
       color: "text-cyan-600",
       colorStart: "#0891b2",
       colorEnd: "#0e7490",
       categories: [
-        { id: 501, name: "Development", color: "bg-cyan-100 text-cyan-700", icon: <Code size={16} />, description: "Tools for extending your product" },
-        { id: 502, name: "Testing", color: "bg-sky-100 text-sky-700", icon: <TestTube size={16} />, description: "Tools for testing your expanded features" },
-        { id: 503, name: "Design", color: "bg-blue-100 text-blue-700", icon: <Lightbulb size={16} />, description: "Tools for designing additional features" }
+        { id: 501, name: "Extensions", color: "bg-cyan-100 text-cyan-700", icon: <Code size={16} />, description: "Tools for extending your product" },
+        { id: 502, name: "Integration", color: "bg-sky-100 text-sky-700", icon: <Link2 size={16} />, description: "Tools for connecting with external services" },
+        { id: 503, name: "Deployment", color: "bg-blue-100 text-blue-700", icon: <Rocket size={16} />, description: "Tools for deploying your application" }
       ],
       tools: [
-        { id: 5001, name: "Agile User Story Mapping", category: 501, description: "A visual exercise that helps prioritize work and understand user experience.", link: "#", tags: [{ id: 1, name: "Development", color: "bg-cyan-100 text-cyan-700" }] },
-        { id: 5002, name: "Feature Flag Systems", category: 501, description: "Tools that allow you to toggle features on/off without deploying new code.", link: "#", tags: [{ id: 1, name: "Development", color: "bg-cyan-100 text-cyan-700" }] },
-        { id: 5003, name: "Rapid Prototyping Tools", category: 503, description: "Software that enables quick creation of interactive prototypes.", link: "#", tags: [{ id: 3, name: "Design", color: "bg-blue-100 text-blue-700" }] },
-        { id: 5004, name: "Component-Based Design Systems", category: 503, description: "Reusable design elements that ensure consistency and speed up development.", link: "#", tags: [{ id: 3, name: "Design", color: "bg-blue-100 text-blue-700" }] },
-        { id: 5005, name: "BDD Testing Frameworks", category: 502, description: "Tools that support Behavior-Driven Development for feature validation.", link: "#", tags: [{ id: 2, name: "Testing", color: "bg-sky-100 text-sky-700" }] },
-        { id: 5006, name: "Continuous Deployment Pipelines", category: 501, description: "Automate the delivery of code changes to production environments.", link: "#", tags: [{ id: 1, name: "Development", color: "bg-cyan-100 text-cyan-700" }] },
-        { id: 5007, name: "Technical Debt Tracker", category: 501, description: "Monitor and manage shortcuts taken during rapid development.", link: "#", tags: [{ id: 1, name: "Development", color: "bg-cyan-100 text-cyan-700" }] },
+        { 
+          id: 5001, 
+          name: "No-Code Feature Expander", 
+          category: 501, 
+          description: "Add additional functionality to your app within your no-code platform.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Extensions", color: "bg-cyan-100 text-cyan-700" }],
+          benefits: [
+            "Add complex features without coding",
+            "Scale your application functionality",
+            "Maintain consistent user experience",
+            "Implement feedback-driven improvements"
+          ]
+        },
+        { 
+          id: 5002, 
+          name: "Plugin Marketplace", 
+          category: 501, 
+          description: "Browse and install ready-made plugins to add functionality to your application.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Extensions", color: "bg-cyan-100 text-cyan-700" }],
+          benefits: [
+            "Extend functionality without custom code",
+            "Access specialized features instantly",
+            "Find solutions for common requirements",
+            "Integrate pre-built components seamlessly"
+          ]
+        },
+        { 
+          id: 5003, 
+          name: "API Connector", 
+          category: 502, 
+          description: "Connect your application to external services through ready-made connectors.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Integration", color: "bg-sky-100 text-sky-700" }],
+          benefits: [
+            "Integrate with popular services without coding",
+            "Exchange data between applications",
+            "Extend functionality through external APIs",
+            "Create seamless user experiences across platforms"
+          ]
+        },
+        { 
+          id: 5004, 
+          name: "Automation Platform", 
+          category: 502, 
+          description: "Create automated workflows between your app and other services.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Integration", color: "bg-sky-100 text-sky-700" }],
+          benefits: [
+            "Connect different tools and services visually",
+            "Automate data transfers between systems",
+            "Create complex business processes",
+            "Reduce manual work with triggers and actions"
+          ]
+        },
+        { 
+          id: 5005, 
+          name: "UX Template Library", 
+          category: 501, 
+          description: "Implement user experience best practices using pre-built templates.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Extensions", color: "bg-cyan-100 text-cyan-700" }],
+          benefits: [
+            "Create professional user experiences quickly",
+            "Implement UX patterns proven to work",
+            "Maintain design consistency",
+            "Focus on functionality over design details"
+          ]
+        },
+        { 
+          id: 5006, 
+          name: "Functional Testing Tool", 
+          category: 501, 
+          description: "Test your application's functionality to identify and fix issues.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Extensions", color: "bg-cyan-100 text-cyan-700" }],
+          benefits: [
+            "Ensure features work as expected",
+            "Document and track bugs systematically",
+            "Verify critical user workflows",
+            "Identify edge cases and potential problems"
+          ]
+        },
+        { 
+          id: 5007, 
+          name: "One-Click Deployment", 
+          category: 503, 
+          description: "Publish your MVP with minimal technical configuration.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Deployment", color: "bg-blue-100 text-blue-700" }],
+          benefits: [
+            "Deploy your application with minimal effort",
+            "Make updates quickly and easily",
+            "Avoid complex server configurations",
+            "Focus on building rather than infrastructure"
+          ]
+        },
+        { 
+          id: 5008, 
+          name: "Domain Setup Wizard", 
+          category: 503, 
+          description: "Configure a custom domain for your application easily.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Deployment", color: "bg-blue-100 text-blue-700" }],
+          benefits: [
+            "Create a professional web presence",
+            "Setup DNS records automatically",
+            "Configure SSL certificates",
+            "Establish branding with custom URLs"
+          ]
+        },
+        { 
+          id: 5009, 
+          name: "User Testing Prep Kit", 
+          category: 503, 
+          description: "Prepare your application for user testing sessions.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Deployment", color: "bg-blue-100 text-blue-700" }],
+          benefits: [
+            "Create test accounts and scenarios",
+            "Setup analytics to track user behavior",
+            "Prepare feedback collection mechanisms",
+            "Ensure stable environment for testing"
+          ]
+        },
       ]
     },
     {
@@ -253,18 +790,137 @@ const Timeline = () => {
       colorStart: "#e11d48",
       colorEnd: "#be123c",
       categories: [
-        { id: 601, name: "Usability", color: "bg-rose-100 text-rose-700", icon: <Users size={16} />, description: "Tools for testing usability with real users" },
-        { id: 602, name: "Analytics", color: "bg-red-100 text-red-700", icon: <Database size={16} />, description: "Tools for measuring user behavior" },
-        { id: 603, name: "Quality", color: "bg-pink-100 text-pink-700", icon: <Zap size={16} />, description: "Tools for ensuring high quality" }
+        { id: 601, name: "User Testing", color: "bg-rose-100 text-rose-700", icon: <Users size={16} />, description: "Tools for testing with real users" },
+        { id: 602, name: "Feedback", color: "bg-red-100 text-red-700", icon: <Lightbulb size={16} />, description: "Tools for collecting and analyzing feedback" },
+        { id: 603, name: "Optimization", color: "bg-pink-100 text-pink-700", icon: <Zap size={16} />, description: "Tools for improving your product" }
       ],
       tools: [
-        { id: 6001, name: "Usability Testing Templates", category: 601, description: "Structured formats for observing users interact with your product.", link: "#", tags: [{ id: 1, name: "Usability", color: "bg-rose-100 text-rose-700" }] },
-        { id: 6002, name: "A/B Testing Platforms", category: 602, description: "Tools to compare two versions of a webpage or app to determine which performs better.", link: "#", tags: [{ id: 2, name: "Analytics", color: "bg-red-100 text-red-700" }] },
-        { id: 6003, name: "Heatmap Analytics", category: 602, description: "Visual representations of where users click and spend time on your interface.", link: "#", tags: [{ id: 2, name: "Analytics", color: "bg-red-100 text-red-700" }] },
-        { id: 6004, name: "User Feedback Collection Tools", category: 601, description: "Solutions for gathering and organizing user opinions and suggestions.", link: "#", tags: [{ id: 1, name: "Usability", color: "bg-rose-100 text-rose-700" }] },
-        { id: 6005, name: "Bug Tracking Systems", category: 603, description: "Software for documenting, tracking, and prioritizing product issues.", link: "#", tags: [{ id: 3, name: "Quality", color: "bg-pink-100 text-pink-700" }] },
-        { id: 6006, name: "Performance Monitoring Tools", category: 603, description: "Track and optimize the speed and reliability of your application.", link: "#", tags: [{ id: 3, name: "Quality", color: "bg-pink-100 text-pink-700" }] },
-        { id: 6007, name: "Accessibility Auditing Tools", category: 603, description: "Ensure your product works well for users with disabilities.", link: "#", tags: [{ id: 3, name: "Quality", color: "bg-pink-100 text-pink-700" }] },
+        { 
+          id: 6001, 
+          name: "User Testing Coordinator", 
+          category: 601, 
+          description: "Organize and conduct test sessions with 3-5 potential users.", 
+          link: "#", 
+          tags: [{ id: 1, name: "User Testing", color: "bg-rose-100 text-rose-700" }],
+          benefits: [
+            "Get real user feedback before launch",
+            "Identify usability issues early",
+            "Validate your core value proposition",
+            "Build relationships with potential customers"
+          ]
+        },
+        { 
+          id: 6002, 
+          name: "Structured Feedback Collector", 
+          category: 602, 
+          description: "Gather and organize user feedback in a structured format.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Feedback", color: "bg-red-100 text-red-700" }],
+          benefits: [
+            "Organize feedback methodically",
+            "Identify patterns and priorities",
+            "Capture both quantitative and qualitative data",
+            "Create actionable insights from user input"
+          ]
+        },
+        { 
+          id: 6003, 
+          name: "Critical Issue Identifier", 
+          category: 601, 
+          description: "Identify and prioritize the most critical problems that need fixing.", 
+          link: "#", 
+          tags: [{ id: 1, name: "User Testing", color: "bg-rose-100 text-rose-700" }],
+          benefits: [
+            "Focus on highest-impact improvements",
+            "Classify issues by severity and scope",
+            "Identify show-stopping problems",
+            "Create a prioritized fix roadmap"
+          ]
+        },
+        { 
+          id: 6004, 
+          name: "Quick-Fix Implementer", 
+          category: 603, 
+          description: "Make rapid improvements based on user testing feedback.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Optimization", color: "bg-pink-100 text-pink-700" }],
+          benefits: [
+            "Address feedback quickly",
+            "Implement improvements without coding",
+            "Iterate on user experience",
+            "Show responsiveness to user input"
+          ]
+        },
+        { 
+          id: 6005, 
+          name: "User Path Optimizer", 
+          category: 603, 
+          description: "Streamline and optimize critical user journeys through your product.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Optimization", color: "bg-pink-100 text-pink-700" }],
+          benefits: [
+            "Improve conversion on key workflows",
+            "Reduce friction in critical tasks",
+            "Create intuitive navigation paths",
+            "Enhance overall user experience"
+          ]
+        },
+        { 
+          id: 6006, 
+          name: "Content Refiner", 
+          category: 603, 
+          description: "Polish and improve product messaging and content.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Optimization", color: "bg-pink-100 text-pink-700" }],
+          benefits: [
+            "Clarify value proposition",
+            "Improve readability and comprehension",
+            "Create consistent voice and tone",
+            "Enhance user guidance and instruction"
+          ]
+        },
+        { 
+          id: 6007, 
+          name: "Launch Preparation Checklist", 
+          category: 602, 
+          description: "Prepare all necessary elements for a successful public launch.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Feedback", color: "bg-red-100 text-red-700" }],
+          benefits: [
+            "Ensure all launch components are ready",
+            "Reduce risk of launch issues",
+            "Prepare for user onboarding",
+            "Coordinate technical and marketing elements"
+          ]
+        },
+        { 
+          id: 6008, 
+          name: "AI Marketing Content Generator", 
+          category: 602, 
+          description: "Create promotional materials and content with AI assistance.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Feedback", color: "bg-red-100 text-red-700" }],
+          benefits: [
+            "Generate professional marketing assets",
+            "Create consistent messaging across channels",
+            "Save time on content creation",
+            "Prepare for launch promotion"
+          ]
+        },
+        { 
+          id: 6009, 
+          name: "Analytics Configuration Tool", 
+          category: 601, 
+          description: "Set up the tools to track key metrics once your product is live.", 
+          link: "#", 
+          tags: [{ id: 1, name: "User Testing", color: "bg-rose-100 text-rose-700" }],
+          benefits: [
+            "Prepare to measure user behavior",
+            "Track conversion on key actions",
+            "Set up custom event tracking",
+            "Create dashboards for key metrics"
+          ]
+        },
       ]
     },
     {
@@ -278,16 +934,149 @@ const Timeline = () => {
       categories: [
         { id: 701, name: "Launch", color: "bg-indigo-100 text-indigo-700", icon: <Rocket size={16} />, description: "Tools for launching your product" },
         { id: 702, name: "Analytics", color: "bg-violet-100 text-violet-700", icon: <Database size={16} />, description: "Tools for analyzing performance" },
-        { id: 703, name: "Planning", color: "bg-purple-100 text-purple-700", icon: <FileText size={16} />, description: "Tools for planning your next iteration" }
+        { id: 703, name: "Strategy", color: "bg-purple-100 text-purple-700", icon: <BrainCircuit size={16} />, description: "Tools for planning your next steps" }
       ],
       tools: [
-        { id: 7001, name: "Launch Checklist Template", category: 701, description: "A comprehensive list of tasks to complete before releasing your product.", link: "#", tags: [{ id: 1, name: "Launch", color: "bg-indigo-100 text-indigo-700" }] },
-        { id: 7002, name: "Analytics Implementation Guide", category: 702, description: "Instructions for setting up proper tracking of user behavior in your product.", link: "#", tags: [{ id: 2, name: "Analytics", color: "bg-violet-100 text-violet-700" }] },
-        { id: 7003, name: "Early Adopter Engagement Kit", category: 701, description: "Resources for attracting and retaining your first users.", link: "#", tags: [{ id: 1, name: "Launch", color: "bg-indigo-100 text-indigo-700" }] },
-        { id: 7004, name: "Customer Feedback Loops", category: 702, description: "Systems for continuously collecting and implementing user suggestions.", link: "#", tags: [{ id: 2, name: "Analytics", color: "bg-violet-100 text-violet-700" }] },
-        { id: 7005, name: "Iterative Development Planner", category: 703, description: "A framework for planning your next development cycle based on launch data.", link: "#", tags: [{ id: 3, name: "Planning", color: "bg-purple-100 text-purple-700" }] },
-        { id: 7006, name: "Product Metrics Dashboard", category: 702, description: "Visualize key performance indicators for your product in one place.", link: "#", tags: [{ id: 2, name: "Analytics", color: "bg-violet-100 text-violet-700" }] },
-        { id: 7007, name: "User Onboarding Toolkit", category: 701, description: "Design an effective first-time user experience to increase retention.", link: "#", tags: [{ id: 1, name: "Launch", color: "bg-indigo-100 text-indigo-700" }] },
+        { 
+          id: 7001, 
+          name: "Final Technical Review", 
+          category: 701, 
+          description: "Complete final technical checks and optimizations before launch.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Launch", color: "bg-indigo-100 text-indigo-700" }],
+          benefits: [
+            "Ensure all functionality works correctly",
+            "Fix last-minute technical issues",
+            "Optimize performance for first users",
+            "Reduce risk of launch problems"
+          ]
+        },
+        { 
+          id: 7002, 
+          name: "MVP Deployment Manager", 
+          category: 701, 
+          description: "Deploy the final version of your MVP to production.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Launch", color: "bg-indigo-100 text-indigo-700" }],
+          benefits: [
+            "Streamline the final deployment process",
+            "Ensure all components are correctly published",
+            "Manage domain and hosting configuration",
+            "Create a stable production environment"
+          ]
+        },
+        { 
+          id: 7003, 
+          name: "Error Monitoring Setup", 
+          category: 701, 
+          description: "Configure tools to track and alert on application errors.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Launch", color: "bg-indigo-100 text-indigo-700" }],
+          benefits: [
+            "Identify problems as they occur",
+            "Receive alerts for critical issues",
+            "Track error frequency and patterns",
+            "Prioritize fixes based on impact"
+          ]
+        },
+        { 
+          id: 7004, 
+          name: "Launch Announcer", 
+          category: 701, 
+          description: "Announce and promote your MVP in selected channels.", 
+          link: "#", 
+          tags: [{ id: 1, name: "Launch", color: "bg-indigo-100 text-indigo-700" }],
+          benefits: [
+            "Create targeted launch announcements",
+            "Reach your initial user audience",
+            "Generate excitement about your product",
+            "Drive first users to your application"
+          ]
+        },
+        { 
+          id: 7005, 
+          name: "User Interaction Monitor", 
+          category: 702, 
+          description: "Actively monitor how users interact with your newly launched product.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Analytics", color: "bg-violet-100 text-violet-700" }],
+          benefits: [
+            "Observe real user behavior",
+            "Identify unexpected usage patterns",
+            "Track completion of key actions",
+            "Find usability issues in production"
+          ]
+        },
+        { 
+          id: 7006, 
+          name: "Feedback Collector", 
+          category: 702, 
+          description: "Gather and organize feedback from your first real users.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Analytics", color: "bg-violet-100 text-violet-700" }],
+          benefits: [
+            "Capture user reactions and suggestions",
+            "Identify most-requested improvements",
+            "Understand user pain points",
+            "Collect testimonials and positive feedback"
+          ]
+        },
+        { 
+          id: 7007, 
+          name: "AI Data Analyst", 
+          category: 702, 
+          description: "Use AI to analyze user behavior data and identify patterns.", 
+          link: "#", 
+          tags: [{ id: 2, name: "Analytics", color: "bg-violet-100 text-violet-700" }],
+          benefits: [
+            "Extract insights from usage data",
+            "Identify behavior patterns and trends",
+            "Detect potential issues from data",
+            "Make data-driven improvement decisions"
+          ]
+        },
+        { 
+          id: 7008, 
+          name: "MVP Process Analyzer", 
+          category: 703, 
+          description: "Analyze the entire Rabbit MVP process and capture learnings.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Strategy", color: "bg-purple-100 text-purple-700" }],
+          benefits: [
+            "Document what worked and what didn't",
+            "Improve future development processes",
+            "Identify efficiency opportunities",
+            "Create a playbook for future projects"
+          ]
+        },
+        { 
+          id: 7009, 
+          name: "Strategic Decision Framework", 
+          category: 703, 
+          description: "Make informed decisions about next steps: pivot, persevere, or abandon.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Strategy", color: "bg-purple-100 text-purple-700" }],
+          benefits: [
+            "Evaluate product viability objectively",
+            "Make data-backed strategic decisions",
+            "Plan pivot options if needed",
+            "Create a roadmap for continued development"
+          ]
+        },
+        { 
+          id: 7010, 
+          name: "Next Cycle Planner", 
+          category: 703, 
+          description: "Plan the next development cycle based on launch data and learnings.", 
+          link: "#", 
+          tags: [{ id: 3, name: "Strategy", color: "bg-purple-100 text-purple-700" }],
+          benefits: [
+            "Prioritize features for the next iteration",
+            "Apply lessons from the MVP process",
+            "Set realistic timelines and goals",
+            "Focus on highest-impact improvements"
+          ]
+        },
       ]
     }
   ];
@@ -423,6 +1212,7 @@ const Timeline = () => {
                     <CardContent className="pt-6">
                       <p className="text-gray-700 leading-relaxed">{stage.description}</p>
                       
+                      {/* Stage Goal Section */}
                       <div className="mt-6 pt-6 border-t border-gray-100">
                         <div className="flex flex-col space-y-4">
                           <div className="flex items-center gap-2">
@@ -430,40 +1220,222 @@ const Timeline = () => {
                               className="w-1 h-5 rounded-full"
                               style={{ background: `linear-gradient(to bottom, ${stage.colorStart}, ${stage.colorEnd})` }}
                             ></div>
-                            <h4 className="font-medium text-slate-900">Timeline Position</h4>
+                            <h4 className="font-medium text-slate-900">Stage Goal</h4>
                           </div>
-                          <div className="w-full bg-gray-100 h-2 rounded-full relative mt-2">
-                            <div 
-                              className="absolute h-2 rounded-full transition-all duration-700"
-                              style={{ 
-                                width: `${(stage.id / 7) * 100}%`,
-                                background: `linear-gradient(to right, ${stage.colorStart}, ${stage.colorEnd})` 
-                              }}
-                            ></div>
-                          </div>
-                          <div className="flex justify-between text-xs text-gray-500 mt-1">
-                            <span>Start</span>
-                            <span>MVP Complete</span>
-                          </div>
+                          <p className="text-gray-700">
+                            {stage.id === 1 && "Define and validate your business hypothesis."}
+                            {stage.id === 2 && "Validate business hypotheses with potential customers."}
+                            {stage.id === 3 && "Design your solution and MVP architecture."}
+                            {stage.id === 4 && "Implement core functionality using no-code/low-code solutions."}
+                            {stage.id === 5 && "Expand features with minimal coding and prepare for testing."}
+                            {stage.id === 6 && "Test with real users and make rapid improvements."}
+                            {stage.id === 7 && "Launch your MVP and collect data for the next iteration."}
+                          </p>
                         </div>
                       </div>
-                      
+
+                      {/* Key Activities Section */}
                       <div className="mt-6 pt-6 border-t border-gray-100">
                         <div className="flex flex-col space-y-3">
-                          <h4 className="font-medium text-slate-900 mb-2">Available Categories</h4>
-                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                            {stage.categories.map(category => (
-                              <button
-                                key={category.id}
-                                className={`flex items-center gap-2 py-2 px-3 rounded-lg transition-all text-sm justify-start 
-                                ${activeCategory === category.id ? category.color : 'bg-gray-50 text-gray-700 hover:bg-gray-100'}`}
-                                onClick={() => setActiveCategory(activeCategory === category.id ? null : category.id)}
-                              >
-                                {category.icon}
-                                {category.name}
-                              </button>
-                            ))}
+                          <div className="flex items-center gap-2">
+                            <div 
+                              className="w-1 h-5 rounded-full"
+                              style={{ background: `linear-gradient(to bottom, ${stage.colorStart}, ${stage.colorEnd})` }}
+                            ></div>
+                            <h4 className="font-medium text-slate-900">Key Activities</h4>
                           </div>
+                          <ul className="space-y-2">
+                            {stage.id === 1 && (
+                              <>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-blue-500 mt-1"><Check size={14} /></span>
+                                  <span>Market and competition analysis with AI</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-blue-500 mt-1"><Check size={14} /></span>
+                                  <span>Problem and customer segment identification</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-blue-500 mt-1"><Check size={14} /></span>
+                                  <span>AI-assisted Business Model Canvas creation</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-blue-500 mt-1"><Check size={14} /></span>
+                                  <span>AI-powered SWOT analysis</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-blue-500 mt-1"><Check size={14} /></span>
+                                  <span>5-10 key business hypotheses preparation</span>
+                                </li>
+                              </>
+                            )}
+                            {stage.id === 2 && (
+                              <>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-purple-500 mt-1"><Check size={14} /></span>
+                                  <span>AI-assisted interview script preparation</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-purple-500 mt-1"><Check size={14} /></span>
+                                  <span>Identifying 5-10 potential customers</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-purple-500 mt-1"><Check size={14} /></span>
+                                  <span>Creating a concise validation survey (max 5 questions)</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-purple-500 mt-1"><Check size={14} /></span>
+                                  <span>Conducting 3-5 remote customer interviews</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-purple-500 mt-1"><Check size={14} /></span>
+                                  <span>AI-assisted analysis of feedback</span>
+                                </li>
+                              </>
+                            )}
+                            {stage.id === 3 && (
+                              <>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-amber-500 mt-1"><Check size={14} /></span>
+                                  <span>AI-assisted user journey mapping</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-amber-500 mt-1"><Check size={14} /></span>
+                                  <span>Solution architecture design</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-amber-500 mt-1"><Check size={14} /></span>
+                                  <span>Technology stack selection</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-amber-500 mt-1"><Check size={14} /></span>
+                                  <span>AI-generated UI/UX design</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-amber-500 mt-1"><Check size={14} /></span>
+                                  <span>Key screen wireframing</span>
+                                </li>
+                              </>
+                            )}
+                            {stage.id === 4 && (
+                              <>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-green-500 mt-1"><Check size={14} /></span>
+                                  <span>No-code/low-code platform selection</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-green-500 mt-1"><Check size={14} /></span>
+                                  <span>Basic app configuration in no-code tools</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-green-500 mt-1"><Check size={14} /></span>
+                                  <span>Using templates instead of building from scratch</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-green-500 mt-1"><Check size={14} /></span>
+                                  <span>No-code database configuration</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-green-500 mt-1"><Check size={14} /></span>
+                                  <span>AI-generated content and visuals</span>
+                                </li>
+                              </>
+                            )}
+                            {stage.id === 5 && (
+                              <>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-cyan-500 mt-1"><Check size={14} /></span>
+                                  <span>No-code functionality extension</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-cyan-500 mt-1"><Check size={14} /></span>
+                                  <span>Using plugins and integrations</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-cyan-500 mt-1"><Check size={14} /></span>
+                                  <span>External service connection via connectors</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-cyan-500 mt-1"><Check size={14} /></span>
+                                  <span>Process automation configuration</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-cyan-500 mt-1"><Check size={14} /></span>
+                                  <span>Internal functional testing</span>
+                                </li>
+                              </>
+                            )}
+                            {stage.id === 6 && (
+                              <>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-rose-500 mt-1"><Check size={14} /></span>
+                                  <span>Testing with 3-5 potential users</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-rose-500 mt-1"><Check size={14} /></span>
+                                  <span>Structured feedback collection</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-rose-500 mt-1"><Check size={14} /></span>
+                                  <span>Critical issue identification</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-rose-500 mt-1"><Check size={14} /></span>
+                                  <span>Implementing feedback-based improvements</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-rose-500 mt-1"><Check size={14} /></span>
+                                  <span>AI-assisted marketing material creation</span>
+                                </li>
+                              </>
+                            )}
+                            {stage.id === 7 && (
+                              <>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-indigo-500 mt-1"><Check size={14} /></span>
+                                  <span>Final technical adjustments</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-indigo-500 mt-1"><Check size={14} /></span>
+                                  <span>MVP deployment to production</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-indigo-500 mt-1"><Check size={14} /></span>
+                                  <span>Error monitoring configuration</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-indigo-500 mt-1"><Check size={14} /></span>
+                                  <span>Analyzing user behavior and feedback</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                  <span className="text-indigo-500 mt-1"><Check size={14} /></span>
+                                  <span>Deciding on next steps: pivot, persevere, or abandon</span>
+                                </li>
+                              </>
+                            )}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* Stage Result Section */}
+                      <div className="mt-6 pt-6 border-t border-gray-100">
+                        <div className="flex flex-col space-y-3">
+                          <div className="flex items-center gap-2">
+                            <div 
+                              className="w-1 h-5 rounded-full"
+                              style={{ background: `linear-gradient(to bottom, ${stage.colorStart}, ${stage.colorEnd})` }}
+                            ></div>
+                            <h4 className="font-medium text-slate-900">Stage Result</h4>
+                          </div>
+                          <p className="text-gray-700">
+                            {stage.id === 1 && "Defined business hypothesis and validation plan."}
+                            {stage.id === 2 && "Validated hypotheses and defined MVP functional scope."}
+                            {stage.id === 3 && "Complete MVP design ready for implementation."}
+                            {stage.id === 4 && "Working product foundation with core functionality."}
+                            {stage.id === 5 && "Complete no-code/low-code MVP ready for user testing."}
+                            {stage.id === 6 && "Validated and refined MVP ready for launch."}
+                            {stage.id === 7 && "Live product, initial data, and next steps decision."}
+                          </p>
                         </div>
                       </div>
                     </CardContent>

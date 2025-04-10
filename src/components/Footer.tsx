@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
-              <RabbitLogo className="h-8 w-8" />
+              <RabbitLogo className="h-8 w-8"/>
               <span className="ml-2 text-xl font-light text-gray-900 font-chakra">Rabbit MVP</span>
             </div>
             <p className="text-gray-600 mb-4">
