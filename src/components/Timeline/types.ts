@@ -39,6 +39,21 @@ export interface Tool {
   isRabbitExclusive?: boolean;
 }
 
+export interface StageGuide {
+  overview: string;
+  keyObjectives: string[];
+  process: {
+    name: string;
+    duration: string;
+    description: string;
+  }[];
+  stageOutput: string[];
+  commonPitfalls: string[];
+  keyExpertise: string[];
+  transitionToNext?: string;
+  resources: Resource[];
+}
+
 export interface Stage {
   id: number;
   title: string;
@@ -51,4 +66,5 @@ export interface Stage {
   keyOutcome?: string;
   categories: Category[];
   tools: Tool[];
+  guide?: StageGuide;
 }

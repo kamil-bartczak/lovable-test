@@ -1,5 +1,5 @@
-import React from "react";
-import { Wrench, Filter } from "lucide-react";
+import React, { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { Stage, Tool } from "./types";
 import ToolCard from "./ToolCard";
 
@@ -8,58 +8,49 @@ interface ToolGridProps {
   activeCategory: number | null;
   setActiveCategory: (id: number | null) => void;
   setActiveTool: (tool: Tool) => void;
+  searchQuery: string;
 }
 
 const ToolGrid: React.FC<ToolGridProps> = ({ 
   stage, 
   activeCategory, 
   setActiveCategory, 
-  setActiveTool 
+  setActiveTool,
+  searchQuery
 }) => {
-  // Filter tools based on active category
+  const [showAllTools, setShowAllTools] = useState<boolean>(false);
+  
+  // Filter tools based on active category and search query
   const filteredTools = stage.tools.filter(tool => {
-    if (activeCategory) {
-      return tool.category === activeCategory;
-    }
-    return true;
+    // Filter by category if active
+    const categoryMatch = activeCategory ? tool.category === activeCategory : true;
+    
+    // Filter by search query if present
+    const searchMatch = searchQuery 
+      ? tool.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        tool.description.toLowerCase().includes(searchQuery.toLowerCase())
+      : true;
+    
+    return categoryMatch && searchMatch;
   });
 
-  return (
-    <div className="col-span-1 lg:col-span-2 space-y-6">
-      <div className="flex flex-col space-y-4">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Wrench 
-              size={18} 
-              className="text-white p-1 rounded-full"
-              style={{ background: `linear-gradient(90deg, ${stage.colorStart}, ${stage.colorEnd})` }}  
-            />
-            <h3 className="text-xl font-medium text-gray-900">Available Tools</h3>
-            <span className="text-sm text-gray-500 ml-2">({stage.tools.length} total)</span>
-          </div>
-          
-          <div className="flex items-center gap-2">
-            <button 
-              className="text-sm flex items-center gap-1 px-3 py-1 rounded-full transition-colors border"
-              style={{
-                borderColor: activeCategory ? 'transparent' : '#e5e7eb',
-                color: activeCategory ? 'white' : '#4b5563',
-                background: activeCategory ? 
-                  `linear-gradient(90deg, ${stage.colorStart}, ${stage.colorEnd})` : 
-                  'transparent'
-              }}
-              onClick={() => setActiveCategory(null)}
-            >
-              <Filter size={14} />
-              <span>All Tools</span>
-            </button>
-          </div>
-        </div>
+  // Limited display tools - show only first 4
+  const displayTools = showAllTools 
+    ? filteredTools 
+    : filteredTools.slice(0, 4);
+
+  if (filteredTools.length === 0) {
+    return (
+      <div className="col-span-full p-8 bg-gray-50 rounded-lg text-center">
+        <p className="text-gray-500">No tools match your current filters. Try adjusting your search or category filters.</p>
       </div>
-      
-      {/* Tools Grid */}
+    );
+  }
+
+  return (
+    <div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4">
-        {filteredTools.map((tool) => (
+        {displayTools.map((tool) => (
           <ToolCard 
             key={tool.id}
             tool={tool}
@@ -68,6 +59,25 @@ const ToolGrid: React.FC<ToolGridProps> = ({
           />
         ))}
       </div>
+      
+      {filteredTools.length > 4 && !showAllTools && (
+        <button
+          className="mt-6 w-full py-3 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 text-gray-700"
+          onClick={() => setShowAllTools(true)}
+        >
+          <span>Show {filteredTools.length - 4} more tools</span>
+          <ChevronDown size={16} />
+        </button>
+      )}
+      
+      {showAllTools && filteredTools.length > 4 && (
+        <button
+          className="mt-6 w-full py-3 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 text-gray-700"
+          onClick={() => setShowAllTools(false)}
+        >
+          <span>Show fewer tools</span>
+        </button>
+      )}
     </div>
   );
 };

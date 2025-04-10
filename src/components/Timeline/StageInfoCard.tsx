@@ -1,201 +1,22 @@
-import React from "react";
-import { Check } from "lucide-react";
+import React, { useState } from "react";
+import { Clock, Check, ArrowRight, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Stage } from "./types";
 import styles from "@/styles/timeline.module.css";
+import StageGuideModal from "./StageGuideModal";
 
 interface StageInfoCardProps {
   stage: Stage;
 }
 
 const StageInfoCard: React.FC<StageInfoCardProps> = ({ stage }) => {
+  const [isGuideModalOpen, setIsGuideModalOpen] = useState<boolean>(false);
+  
   // Get the current stage's CSS variables
   const stageColorVars = {
     '--stage-color-1': stage.colorStart || '#64748b',
     '--stage-color-2': stage.colorEnd || '#475569',
   } as React.CSSProperties;
-
-  const renderStageActivities = (stageId: number) => {
-    switch (stageId) {
-      case 1:
-        return (
-          <>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1"><Check size={14} /></span>
-              <span>Market and competition analysis with AI</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1"><Check size={14} /></span>
-              <span>Problem and customer segment identification</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1"><Check size={14} /></span>
-              <span>AI-assisted Business Model Canvas creation</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1"><Check size={14} /></span>
-              <span>AI-powered SWOT analysis</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1"><Check size={14} /></span>
-              <span>5-10 key business hypotheses preparation</span>
-            </li>
-          </>
-        );
-      case 2:
-        return (
-          <>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-500 mt-1"><Check size={14} /></span>
-              <span>AI-assisted interview script preparation</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-500 mt-1"><Check size={14} /></span>
-              <span>Identifying 5-10 potential customers</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-500 mt-1"><Check size={14} /></span>
-              <span>Creating a concise validation survey (max 5 questions)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-500 mt-1"><Check size={14} /></span>
-              <span>Conducting 3-5 remote customer interviews</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-500 mt-1"><Check size={14} /></span>
-              <span>AI-assisted analysis of feedback</span>
-            </li>
-          </>
-        );
-      case 3:
-        return (
-          <>
-            <li className="flex items-start gap-2">
-              <span className="text-amber-500 mt-1"><Check size={14} /></span>
-              <span>AI-assisted user journey mapping</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-amber-500 mt-1"><Check size={14} /></span>
-              <span>Solution architecture design</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-amber-500 mt-1"><Check size={14} /></span>
-              <span>Technology stack selection</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-amber-500 mt-1"><Check size={14} /></span>
-              <span>AI-generated UI/UX design</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-amber-500 mt-1"><Check size={14} /></span>
-              <span>Key screen wireframing</span>
-            </li>
-          </>
-        );
-      case 4:
-        return (
-          <>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-1"><Check size={14} /></span>
-              <span>No-code/low-code platform selection</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-1"><Check size={14} /></span>
-              <span>Basic app configuration in no-code tools</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-1"><Check size={14} /></span>
-              <span>Using templates instead of building from scratch</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-1"><Check size={14} /></span>
-              <span>No-code database configuration</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-1"><Check size={14} /></span>
-              <span>AI-generated content and visuals</span>
-            </li>
-          </>
-        );
-      case 5:
-        return (
-          <>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-500 mt-1"><Check size={14} /></span>
-              <span>No-code functionality extension</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-500 mt-1"><Check size={14} /></span>
-              <span>Using plugins and integrations</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-500 mt-1"><Check size={14} /></span>
-              <span>External service connection via connectors</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-500 mt-1"><Check size={14} /></span>
-              <span>Process automation configuration</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-500 mt-1"><Check size={14} /></span>
-              <span>Internal functional testing</span>
-            </li>
-          </>
-        );
-      case 6:
-        return (
-          <>
-            <li className="flex items-start gap-2">
-              <span className="text-rose-500 mt-1"><Check size={14} /></span>
-              <span>Testing with 3-5 potential users</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-rose-500 mt-1"><Check size={14} /></span>
-              <span>Structured feedback collection</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-rose-500 mt-1"><Check size={14} /></span>
-              <span>Critical issue identification</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-rose-500 mt-1"><Check size={14} /></span>
-              <span>Implementing feedback-based improvements</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-rose-500 mt-1"><Check size={14} /></span>
-              <span>AI-assisted marketing material creation</span>
-            </li>
-          </>
-        );
-      case 7:
-        return (
-          <>
-            <li className="flex items-start gap-2">
-              <span className="text-indigo-500 mt-1"><Check size={14} /></span>
-              <span>Final technical adjustments</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-indigo-500 mt-1"><Check size={14} /></span>
-              <span>MVP deployment to production</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-indigo-500 mt-1"><Check size={14} /></span>
-              <span>Error monitoring configuration</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-indigo-500 mt-1"><Check size={14} /></span>
-              <span>Analyzing user behavior and feedback</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-indigo-500 mt-1"><Check size={14} /></span>
-              <span>Deciding on next steps: pivot, persevere, or abandon</span>
-            </li>
-          </>
-        );
-      default:
-        return null;
-    }
-  };
 
   const getStageResult = (stageId: number) => {
     switch (stageId) {
@@ -223,87 +44,111 @@ const StageInfoCard: React.FC<StageInfoCardProps> = ({ stage }) => {
     }
   };
 
+  const handleGuideButtonClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsGuideModalOpen(true);
+  };
+
   return (
-    <Card 
-      className={`col-span-1 shadow-md transition-all duration-300 ${styles['stage-card']}`}
-      style={stageColorVars}
-    >
-      <CardHeader className="pb-4 border-b border-gray-100">
-        <div className="flex items-center gap-4">
-          <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500 ${stage.color.replace('text', 'bg')} bg-opacity-10`}>
-            <div className={`${stage.color} animate-pulse`}>
-              {stage.icon}
+    <>
+      <Card 
+        className={`col-span-1 shadow-md transition-all duration-300 ${styles['stage-card']}`}
+        style={stageColorVars}
+      >
+        <CardHeader className="pb-4 border-b border-gray-100">
+          <div className="flex items-center gap-4">
+            <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500`}
+              style={{ background: `linear-gradient(90deg, ${stage.colorStart}20, ${stage.colorEnd}30)` }}
+            >
+              <div className={`${stage.color}`}>
+                {stage.icon}
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span 
+                  className="text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded-full"
+                  style={{ 
+                    background: `linear-gradient(90deg, ${stage.colorStart}, ${stage.colorEnd})`,
+                    color: 'white'
+                  }}
+                >
+                  Stage {stage.id} of 7
+                </span>
+                {stage.duration && (
+                  <span className="text-xs flex items-center gap-1 text-gray-500">
+                    <Clock size={12} />
+                    {stage.duration}
+                  </span>
+                )}
+              </div>
+              <CardTitle className="text-2xl font-chakra text-gray-900">{stage.title}</CardTitle>
             </div>
           </div>
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span 
-                className="text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded-full"
-                style={{ 
-                  background: `linear-gradient(90deg, ${stage.colorStart}, ${stage.colorEnd})`,
-                  color: 'white'
-                }}
-              >
-                Step {stage.id} of 7
-              </span>
-            </div>
-            <CardTitle className="text-2xl font-chakra text-gray-900">{stage.title}</CardTitle>
-          </div>
-        </div>
-      </CardHeader>
-      
-      <CardContent className="pt-6">
-        <p className="text-gray-700 leading-relaxed">{stage.description}</p>
+        </CardHeader>
         
-        {/* Stage Goal Section */}
-        <div className="mt-6 pt-6 border-t border-gray-100">
-          <div className="flex flex-col space-y-4">
-            <div className="flex items-center gap-2">
-              <div 
-                className="w-1 h-5 rounded-full"
-                style={{ background: `linear-gradient(to bottom, ${stage.colorStart}, ${stage.colorEnd})` }}
-              ></div>
-              <h4 className="font-medium text-slate-900">Stage Goal</h4>
-            </div>
-            <p className="text-gray-700">
-              {getStageGoal(stage.id)}
-            </p>
+        <CardContent className="pt-5 space-y-5">
+          <div>
+            <p className="text-gray-600 leading-relaxed">{stage.description}</p>
           </div>
-        </div>
-
-        {/* Key Activities Section */}
-        <div className="mt-6 pt-6 border-t border-gray-100">
-          <div className="flex flex-col space-y-3">
-            <div className="flex items-center gap-2">
-              <div 
-                className="w-1 h-5 rounded-full"
-                style={{ background: `linear-gradient(to bottom, ${stage.colorStart}, ${stage.colorEnd})` }}
-              ></div>
-              <h4 className="font-medium text-slate-900">Key Activities</h4>
+          
+          <div>
+            <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Goal</h4>
+            <div className="flex items-start gap-2 bg-gray-50 p-3 rounded-md">
+              <span className="mt-0.5 text-gray-400"><ArrowRight size={16} /></span>
+              <p className="text-gray-700">{getStageGoal(stage.id)}</p>
             </div>
-            <ul className="space-y-2">
-              {renderStageActivities(stage.id)}
-            </ul>
           </div>
-        </div>
-
-        {/* Stage Result Section */}
-        <div className="mt-6 pt-6 border-t border-gray-100">
-          <div className="flex flex-col space-y-3">
-            <div className="flex items-center gap-2">
+          
+          <div>
+            <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Key Outcome</h4>
+            <div 
+              className="p-4 rounded-md flex items-start gap-3"
+              style={{ 
+                background: `linear-gradient(90deg, ${stage.colorStart}10, ${stage.colorEnd}20)`,
+                border: `1px solid ${stage.colorStart}30`
+              }}
+            >
               <div 
-                className="w-1 h-5 rounded-full"
-                style={{ background: `linear-gradient(to bottom, ${stage.colorStart}, ${stage.colorEnd})` }}
-              ></div>
-              <h4 className="font-medium text-slate-900">Stage Result</h4>
+                className="p-1 rounded-full mt-0.5"
+                style={{ background: `linear-gradient(90deg, ${stage.colorStart}, ${stage.colorEnd})` }}
+              >
+                <Check size={14} className="text-white" />
+              </div>
+              <p 
+                className="font-medium"
+                style={{ color: stage.colorStart }}
+              >
+                {stage.keyOutcome || getStageResult(stage.id)}
+              </p>
             </div>
-            <p className="text-gray-700">
-              {getStageResult(stage.id)}
-            </p>
           </div>
-        </div>
-      </CardContent>
-    </Card>
+          
+          <div className="pt-3 relative z-10">
+            <button 
+              className="inline-flex items-center gap-2 text-white px-4 py-2 rounded-lg shadow-sm transition-colors w-full justify-center hover:opacity-90 active:opacity-80"
+              style={{ 
+                background: `linear-gradient(90deg, ${stage.colorStart}, ${stage.colorEnd})`,
+                position: 'relative',
+                zIndex: 5
+              }}
+              onClick={handleGuideButtonClick}
+              type="button"
+            >
+              <span>Read Full Guide</span>
+              <ExternalLink size={14} />
+            </button>
+          </div>
+        </CardContent>
+      </Card>
+      
+      {isGuideModalOpen && (
+        <StageGuideModal 
+          stage={stage} 
+          onClose={() => setIsGuideModalOpen(false)} 
+        />
+      )}
+    </>
   );
 };
 

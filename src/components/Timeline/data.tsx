@@ -5,8 +5,9 @@ import {
   Edit, Camera, Compass, Flag, Eye, PenTool, UserCheck, Search,
   MessageSquare, Target, LayoutDashboard, Globe, LineChart, PieChart,
   Workflow, Repeat, CreditCard, Mail, ArrowRightLeft, Settings,
-  SlackIcon, GitMerge, User, UserPlus, Heart, Share2, Activity,
-  BarChart2, List, Send, Server, ShieldCheck, Smartphone, Store, Video
+  GitMerge, User, UserPlus, Heart, Share2, Activity,
+  BarChart2, List, Send, Server, ShieldCheck, Smartphone, Store,
+  Video, ClipboardList, MousePointer, CheckSquare, GitBranch
 } from "lucide-react";
 import { ToolTag, Category, Tool, Stage, Resource } from "./types";
 
@@ -37,8 +38,7 @@ export const stages: Stage[] = [
       { id: 101, name: "Strategy", color: "bg-blue-100 text-blue-700", icon: <BrainCircuit size={16} />, description: "Tools for developing business and product strategy" },
       { id: 102, name: "Market Research", color: "bg-indigo-100 text-indigo-700", icon: <Users size={16} />, description: "Tools for understanding your market and customers" },
       { id: 103, name: "Planning", color: "bg-violet-100 text-violet-700", icon: <FileText size={16} />, description: "Tools for planning your business and MVP approach" }
-    ],
-    tools: [
+    ],tools: [
       { 
         id: 1001, 
         name: "Business Model Canvas", 
@@ -295,7 +295,113 @@ export const stages: Stage[] = [
         type: "framework",
         isRabbitExclusive: false
       }
-    ]
+    ],
+    guide: {
+      overview: "Business Exploration is the foundation of the Rabbit MVP process, where you define and validate your business hypothesis. This crucial stage sets the direction for your entire MVP journey by establishing a clear vision and understanding of the problem you're solving and for whom.",
+      
+      keyObjectives: [
+        "Define the core business problem you're addressing",
+        "Identify your target customer segments",
+        "Validate your business hypothesis",
+        "Create a clear MVP vision",
+        "Establish key metrics for success"
+      ],
+      
+      process: [
+        {
+          name: "Problem Definition",
+          duration: "60-90 minutes",
+          description: "Begin by clearly articulating the problem you're solving. Identify specific pain points, current solutions, and why existing approaches are inadequate. Create a concise problem statement that captures the essence of what you're addressing. Utilize strategy tools from your toolset to structure this process."
+        },
+        {
+          name: "Target Customer Analysis",
+          duration: "60 minutes",
+          description: "Define who will benefit most from your solution. Use market research tools to create specific customer personas, prioritize segments based on pain level and willingness to pay, and identify your 'day one' customer. Map out their current journey in dealing with the problem."
+        },
+        {
+          name: "Market Analysis",
+          duration: "60 minutes",
+          description: "Understand the competitive landscape and market opportunity. Employ planning tools to identify competitors, analyze their positioning, estimate market size, and identify key trends affecting your market. Focus on finding underserved needs or gaps in existing solutions."
+        },
+        {
+          name: "Value Proposition Crafting",
+          duration: "45 minutes",
+          description: "Define what makes your solution unique and valuable. Articulate your core value proposition in one clear sentence. Use frameworks from your strategy toolset to identify your unique advantage and connect your solution directly to customer pain points."
+        },
+        {
+          name: "Business Model Definition",
+          duration: "60 minutes",
+          description: "Determine how your MVP will create and capture value. Apply business modeling tools to select appropriate revenue models, define pricing strategy, identify key resources needed, and calculate basic unit economics. Consider sustainability and scalability of your approach."
+        },
+        {
+          name: "Rapid Hypothesis Formulation",
+          duration: "30 minutes",
+          description: "Create testable hypotheses about your business idea. Form 3-5 key hypotheses about customer problems and your solution. Format these as clear, testable statements using planning tools from your methodology toolset. Create a simple testing plan for each hypothesis."
+        },
+        {
+          name: "Quality Threshold Setting",
+          duration: "20 minutes",
+          description: "Apply appropriate frameworks to set quality thresholds. Identify the minimum viable features needed to solve the core problem. Rate your comfort level with launching features at 60-70% completion and identify areas where perfectionism might slow you down."
+        },
+        {
+          name: "MVP Scope Definition",
+          duration: "45 minutes",
+          description: "Define what's in and out of your MVP. Use prioritization tools to create a clear list of MVP features based on your core value proposition. Ruthlessly eliminate nice-to-have features and define clear success criteria for the MVP."
+        }
+      ],
+      
+      stageOutput: [
+        "A clearly defined problem statement",
+        "Detailed target customer personas",
+        "Competitive analysis and market insights",
+        "Refined value proposition",
+        "Basic business model framework",
+        "3-5 prioritized business hypotheses to test",
+        "Clearly defined MVP scope with feature set",
+        "Quality thresholds for implementation"
+      ],
+      
+      commonPitfalls: [
+        "Analysis paralysis: Setting a timer for each section will help you move forward",
+        "Perfectionism: Remember, the goal is to define a testable business hypothesis, not a perfect business plan",
+        "Scope creep: Be ruthless about cutting features that aren't essential to testing your core hypothesis",
+        "Confirmation bias: Look for evidence that might disprove your assumptions, not just confirm them",
+        "Ignoring competition: Study competitors not to copy them but to differentiate effectively"
+      ],
+      
+      keyExpertise: [
+        "Basic market research skills",
+        "Customer segmentation knowledge",
+        "Business model understanding",
+        "Hypothesis formulation ability",
+        "Prioritization capability"
+      ],
+      
+      transitionToNext: "Once you've clearly defined your business hypothesis and MVP scope, you're ready to move to Customer Validation, where you'll test these assumptions with real potential customers.",
+      
+      resources: [
+        {
+          title: "Lean Canvas Guide",
+          url: "https://leanstack.com/lean-canvas",
+          type: "article"
+        },
+        {
+          title: "Value Proposition Design",
+          url: "https://www.strategyzer.com/books/value-proposition-design",
+          type: "article"
+        },
+        {
+          title: "Market Sizing Techniques",
+          url: "https://www.forbes.com/sites/alejandrocremades/2018/09/30/how-to-size-the-market-opportunity-for-your-startup/",
+          type: "article"
+        },
+        {
+          title: "Business Model Generation",
+          url: "https://www.strategyzer.com/books/business-model-generation",
+          type: "article"
+        }
+      ]
+    }
   },
   {
     id: 2,
@@ -569,7 +675,113 @@ export const stages: Stage[] = [
         type: "framework",
         isRabbitExclusive: false
       }
-    ]
+    ],
+    guide: {
+      overview: "Customer Validation is where you test your business hypotheses with real potential customers before building anything. This critical stage prevents wasting resources on building something nobody wants by gathering direct feedback from your target audience.",
+      
+      keyObjectives: [
+        "Validate the existence and importance of the problem you're solving",
+        "Confirm your target audience's willingness to use and pay for your solution",
+        "Gather insights on user expectations and requirements",
+        "Refine your value proposition based on real feedback",
+        "Determine if you should proceed, pivot, or abandon your current approach"
+      ],
+      
+      process: [
+        {
+          name: "Validation Planning",
+          duration: "45 minutes",
+          description: "Prepare for efficient customer interactions. Select appropriate user research tools to define key hypotheses to validate, create targeted questions, and prepare interview scripts. Focus on structuring conversations that will reveal genuine customer needs rather than confirming your own assumptions."
+        },
+        {
+          name: "Customer Recruitment",
+          duration: "60 minutes",
+          description: "Find the right people to talk to. Use research tools to identify and reach out to potential customers who fit your target persona. Create a simple screening process to ensure they match your criteria. Aim to recruit 5-10 participants for validation activities."
+        },
+        {
+          name: "Remote Validation Sessions",
+          duration: "3-4 hours",
+          description: "Conduct efficient validation interviews. Apply micro-validation techniques to run short, focused sessions that respect participants' time while extracting maximum value. Document key insights immediately after each conversation to capture nuances and patterns."
+        },
+        {
+          name: "Validation Assessment",
+          duration: "30 minutes",
+          description: "Apply critical validation frameworks to evaluate your findings. Use testing tools to assess if the problem is real and important, if customers actively want a solution, and if they'll pay for your proposed approach. Calculate risk levels based on validation results."
+        },
+        {
+          name: "Market Interest Testing",
+          duration: "60 minutes",
+          description: "Create a minimal test of market interest. Use appropriate testing tools to design a simple landing page or other validation artifact. Include clear calls-to-action and measure conversion rates to gauge initial interest in your solution."
+        },
+        {
+          name: "Feedback Synthesis",
+          duration: "60 minutes",
+          description: "Organize and analyze the feedback collected. Apply analytic frameworks to identify patterns across customer conversations, note differences between segments, and compare feedback against your initial hypotheses. Document surprising or unexpected insights."
+        },
+        {
+          name: "Minimum Viable Features Definition",
+          duration: "45 minutes",
+          description: "Define the essential features based on validation. Select appropriate planning tools to map potential features to specific validated customer needs, prioritize those addressing critical problems, and create a clear MVP feature set based on validation insights."
+        },
+        {
+          name: "Go/No-Go Decision",
+          duration: "30 minutes",
+          description: "Make a data-driven decision about proceeding. Use decision frameworks to evaluate all validation data against your success criteria and decide whether to proceed, pivot, or abandon your current approach. Document your rationale thoroughly."
+        }
+      ],
+      
+      stageOutput: [
+        "Feedback from 5+ potential customers",
+        "Clear validation (or invalidation) of key hypotheses",
+        "Initial market interest metrics from testing",
+        "Refined value proposition based on customer insights",
+        "Clearly defined Minimum Viable Features list",
+        "Documented customer pain points and desires",
+        "Go/No-Go decision with supporting rationale",
+        "Risk assessment based on validation results"
+      ],
+      
+      commonPitfalls: [
+        "Confirmation bias: Avoid asking leading questions that just confirm what you want to hear",
+        "Selection bias: Make sure you're talking to real potential customers, not just friends and family",
+        "Overvaluing positive feedback: People tend to be nice; look for evidence of strong enthusiasm, not just politeness",
+        "Ignoring negative signals: Pay special attention to hesitation, concerns, and objections",
+        "Validating solutions, not problems: Focus first on validating that the problem exists and matters"
+      ],
+      
+      keyExpertise: [
+        "Interview techniques (particularly avoiding leading questions)",
+        "Basic landing page creation skills",
+        "Feedback synthesis ability",
+        "Decision-making framework understanding",
+        "Critical listening skills"
+      ],
+      
+      transitionToNext: "Once you've validated your core business hypotheses with real customers and have a clear understanding of what needs to be built, you're ready to move to Solution Design.",
+      
+      resources: [
+        {
+          title: "The Mom Test",
+          url: "http://momtestbook.com/",
+          type: "article"
+        },
+        {
+          title: "How to Structure Customer Development Interviews",
+          url: "https://www.startupgrind.com/blog/the-ultimate-guide-to-customer-development-interviews-part-1/",
+          type: "article"
+        },
+        {
+          title: "Pretotyping Techniques",
+          url: "https://www.pretotyping.org/",
+          type: "article"
+        },
+        {
+          title: "Customer Discovery Handbook",
+          url: "https://www.startups.com/library/expert-advice/customer-discovery-handbook",
+          type: "article"
+        }
+      ]
+    }
   },
   {
     id: 3,
@@ -840,7 +1052,113 @@ export const stages: Stage[] = [
         type: "framework",
         isRabbitExclusive: false
       }
-    ]
+    ],
+    guide: {
+      overview: "Solution Design transforms validated customer needs into a concrete plan for your MVP. During this stage, you'll create the blueprint for your product, focusing on a design that delivers value in the simplest possible way while providing a good user experience.",
+      
+      keyObjectives: [
+        "Transform customer insights into a functional product design",
+        "Create user journeys that address validated pain points",
+        "Design an intuitive user experience for your MVP",
+        "Select appropriate technologies and architecture",
+        "Prepare detailed specifications for the implementation phase"
+      ],
+      
+      process: [
+        {
+          name: "Multi-Perspective Design",
+          duration: "60 minutes",
+          description: "Approach your design from multiple perspectives. Apply architectural frameworks to sketch the ideal solution, identify technical constraints, and determine what's viable given your resources and market. Integrate these viewpoints into a balanced approach that considers visionary, technical, and business aspects."
+        },
+        {
+          name: "User Journey Mapping",
+          duration: "60 minutes",
+          description: "Map out the user's experience with your product. Use UX design tools to define key user goals, create step-by-step workflows, identify potential friction points, and focus on the critical path that delivers core value. Base these on validated customer needs from the previous stage."
+        },
+        {
+          name: "Innovative Solution Analysis",
+          duration: "45 minutes",
+          description: "Look for innovative solutions that differentiate your product. Apply cross-industry frameworks to identify approaches from unrelated domains that could be applied to your challenges. Incorporate uniquely innovative elements that will make your solution stand out."
+        },
+        {
+          name: "Interface Design",
+          duration: "90 minutes",
+          description: "Create visual representations of your interface. Use appropriate UI design tools to generate interface ideas, create wireframes for key screens, focus on information architecture and user flow, and validate these against your user stories and tasks."
+        },
+        {
+          name: "Technology Selection",
+          duration: "60 minutes",
+          description: "Choose the right tools for building your MVP. Employ planning frameworks to define technical requirements, evaluate potential technologies based on development speed and team familiarity, and make explicit choices for your tech stack."
+        },
+        {
+          name: "Technical Feasibility Assessment",
+          duration: "45 minutes",
+          description: "Ensure your design is technically viable. Use assessment tools to break down the solution into components, rate implementation complexity, identify potential risks, and create mitigation strategies for the most challenging aspects."
+        },
+        {
+          name: "Feature Prioritization",
+          duration: "45 minutes",
+          description: "Create a clear implementation roadmap. Apply prioritization frameworks to categorize features based on importance and effort, ensure you're focusing only on what's truly essential, and create a clear implementation sequence for core functionality."
+        },
+        {
+          name: "Design Documentation",
+          duration: "60 minutes",
+          description: "Create comprehensive documentation for implementation. Use planning tools to document user flows, finalize wireframes, create technical specifications, and establish standards for the implementation phase."
+        }
+      ],
+      
+      stageOutput: [
+        "Balanced product design incorporating multiple perspectives",
+        "Detailed user journey maps for key workflows",
+        "Low-fidelity wireframes for all key screens",
+        "Selected technology stack with rationale",
+        "Technical feasibility assessment",
+        "Prioritized feature list with implementation order",
+        "Implementation roadmap with sequence",
+        "Comprehensive design documentation"
+      ],
+      
+      commonPitfalls: [
+        "Feature creep: Stay focused on only what's needed to deliver core value",
+        "Over-designing: Keep interfaces simple and focused on core functionality",
+        "Analysis paralysis: Set time limits for each design decision",
+        "Premature optimization: Focus on 'good enough' solutions that can be refined later",
+        "Technology bias: Choose technologies based on project needs, not personal preferences"
+      ],
+      
+      keyExpertise: [
+        "Basic user experience design knowledge",
+        "Wireframing skills (can be very low-fidelity)",
+        "Technical architecture understanding",
+        "Prioritization framework familiarity",
+        "Documentation ability"
+      ],
+      
+      transitionToNext: "With a clear design plan in place, you're ready to move to Core Implementation, where you'll build the foundational elements of your MVP.",
+      
+      resources: [
+        {
+          title: "User Journey Mapping Guide",
+          url: "https://www.nngroup.com/articles/journey-mapping-101/",
+          type: "article"
+        },
+        {
+          title: "Wireframing Best Practices",
+          url: "https://www.smashingmagazine.com/2018/03/guide-wireframing-prototyping/",
+          type: "article"
+        },
+        {
+          title: "Choosing the Right Tech Stack for Your MVP",
+          url: "https://www.ycombinator.com/library/6f-how-to-choose-the-right-tech-stack-for-your-startup",
+          type: "article"
+        },
+        {
+          title: "Feature Prioritization Techniques",
+          url: "https://www.productplan.com/learn/feature-prioritization-techniques/",
+          type: "article"
+        }
+      ]
+    }
   },
   {
     id: 4,
@@ -1119,7 +1437,114 @@ export const stages: Stage[] = [
         type: "template",
         isRabbitExclusive: false
       }
-    ]
+    ],
+    guide: {
+      overview: "Core Implementation is where your MVP begins to take tangible form. In this stage, you'll focus on building the fundamental elements of your product using low-code/no-code approaches wherever possible to maximize speed and efficiency.",
+      
+      keyObjectives: [
+        "Build the essential infrastructure and foundation of your product",
+        "Implement core functionality that delivers your primary value proposition",
+        "Create a working product skeleton that can be expanded upon",
+        "Validate technical assumptions and approach",
+        "Establish the development workflow for feature expansion"
+      ],
+      
+      process: [
+        {
+          name: "Development Environment Setup",
+          duration: "45 minutes",
+          description: "Prepare your technical foundation. Utilize appropriate development tools to set up version control, configure environments, establish code standards, and install essential dependencies. This creates the technical infrastructure for your implementation."
+        },
+        {
+          name: "No-Code/Low-Code Platform Selection",
+          duration: "60 minutes",
+          description: "Identify optimal tools for rapid development. Apply selection frameworks to evaluate platforms based on your requirements, choosing appropriate solutions for frontend, backend, authentication, and integrations. Focus on tools that accelerate development without sacrificing essential functionality."
+        },
+        {
+          name: "Data Foundation Implementation",
+          duration: "90 minutes",
+          description: "Create your data foundation. Use database tools to design a minimal schema, create necessary tables and relationships, define API structure, and implement basic security. Focus on only the essential data elements needed for core functionality."
+        },
+        {
+          name: "Differentiating Feature Implementation",
+          duration: "90 minutes",
+          description: "Create your standout feature. Apply innovation frameworks to implement one feature that breaks conventional approaches, making your product memorable and unique. This should be the feature that embodies your core value proposition most distinctly."
+        },
+        {
+          name: "Core Functionality Development",
+          duration: "4 hours",
+          description: "Build your product foundation. Use rapid development techniques to implement the absolute core functionality, create a minimal viable user interface, and implement essential user flows. Utilize templates and components wherever possible to accelerate development."
+        },
+        {
+          name: "User Authentication Implementation",
+          duration: "60 minutes",
+          description: "Create essential user management features. Apply authentication frameworks to implement sign-up and login functionality, create basic user profiles if needed, and set up essential permissions. Focus on security fundamentals without overcomplicating."
+        },
+        {
+          name: "Component Reuse and Adaptation",
+          duration: "60 minutes",
+          description: "Leverage reusable elements. Apply appropriate frameworks to identify components from previous projects that can be reused, adapt existing patterns to current challenges, and document new components created for future use."
+        },
+        {
+          name: "Initial Technical Testing",
+          duration: "60 minutes",
+          description: "Verify your implementation works. Use testing frameworks to check core functionality across different environments, identify and fix critical issues, verify data handling, and ensure basic security and performance meet minimum requirements."
+        }
+      ],
+      
+      stageOutput: [
+        "Configured development environments",
+        "Selected and set up no-code/low-code platforms",
+        "Implemented database and API structure",
+        "Created one standout differentiating feature",
+        "Built core product functionality",
+        "Implemented basic user authentication",
+        "Applied reusable components where possible",
+        "Completed initial technical testing",
+        "A working foundation for your product"
+      ],
+      
+      commonPitfalls: [
+        "Perfectionism: Focus on functional over beautiful - aim for the right quality threshold",
+        "Custom coding everything: Use existing libraries, templates, and components wherever possible",
+        "Premature optimization: Avoid optimizing for scale or edge cases in the MVP",
+        "Scope expansion: Stick rigorously to implementing only the core features",
+        "Technology churn: Avoid switching technologies once implementation has begun"
+      ],
+      
+      keyExpertise: [
+        "Basic programming or no-code platform experience",
+        "Database design fundamentals",
+        "API implementation knowledge",
+        "Testing methodologies",
+        "Component-based development understanding"
+      ],
+      
+      transitionToNext: "With the core functionality of your MVP implemented, you're ready to move to Feature Expansion, where you'll build out the secondary features that enhance the product.",
+      
+      resources: [
+        {
+          title: "No-Code Development Platforms Comparison",
+          url: "https://www.nocode.tech/tools",
+          type: "article"
+        },
+        {
+          title: "Database Schema Design Best Practices",
+          url: "https://www.dbdesigner.net/blog/database-schema-design-best-practices/",
+          type: "article"
+        },
+        {
+          title: "API Design Guidelines",
+          url: "https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md",
+          type: "documentation"
+        },
+        {
+          title: "MVP Technical Testing Checklist",
+          url: "https://blog.codinghorror.com/the-last-responsible-moment/",
+          type: "article"
+        }
+      ]
+    }
   },
   {
     id: 5,
@@ -1389,7 +1814,114 @@ export const stages: Stage[] = [
         type: "framework",
         isRabbitExclusive: false
       }
-    ]
+    ],
+    guide: {
+      overview: "Feature Expansion builds upon your core implementation by adding secondary features that enhance the product experience while maintaining the rapid development pace. This stage focuses on expanding functionality through integrations and plugins rather than custom development wherever possible.",
+      
+      keyObjectives: [
+        "Expand product functionality beyond core features",
+        "Integrate external services to add capabilities quickly",
+        "Enhance the user experience with secondary features",
+        "Ensure the product is ready for user testing",
+        "Maintain flexibility for potential pivots"
+      ],
+      
+      process: [
+        {
+          name: "Adaptability Assessment",
+          duration: "30 minutes",
+          description: "Ensure your implementation can adapt to feedback. Apply appropriate frameworks to create realistic pivot scenarios, identify required changes for each, and assess your ability to quickly implement them. Make adjustments to increase flexibility where needed."
+        },
+        {
+          name: "Secondary Feature Implementation",
+          duration: "4 hours",
+          description: "Add important but non-core functionality. Use development tools to implement the next tier of features from your prioritization, focusing on those that enhance the core experience. Maintain consistent design patterns across all implementations."
+        },
+        {
+          name: "Third-Party Integration",
+          duration: "90 minutes",
+          description: "Leverage existing services for added functionality. Use integration tools to connect to relevant APIs and services, implement authentication flows, and ensure reliable data exchange. This extends your product capabilities without custom development."
+        },
+        {
+          name: "Workflow Automation",
+          duration: "60 minutes",
+          description: "Create automated processes without custom code. Apply no-code tools to identify and automate repeatable processes, connect triggers and actions, and test automation sequences. This adds sophistication without increasing complexity."
+        },
+        {
+          name: "Administration Implementation",
+          duration: "60 minutes",
+          description: "Add tools to manage and observe your product. Use appropriate frameworks to implement basic admin functionality, monitoring, and simple dashboards. This provides visibility into product usage and issues."
+        },
+        {
+          name: "Optimization Planning",
+          duration: "30 minutes",
+          description: "Identify what you're deliberately not optimizing. Apply appropriate frameworks to list potential optimizations, document which ones you're deferring, and create a post-validation plan. This creates intentionality around your technical decisions."
+        },
+        {
+          name: "Technical Documentation",
+          duration: "30 minutes",
+          description: "Track conscious technical compromises. Use documentation tools to record shortcuts and compromises made for speed, rate each on importance, and create a plan for addressing them post-validation. This ensures technical decisions are deliberate, not accidental."
+        },
+        {
+          name: "End-to-End Testing",
+          duration: "60 minutes",
+          description: "Verify the expanded product works as a whole. Apply testing frameworks to check complete user journeys, verify integrations and data flows, and identify critical issues. This ensures the product is ready for user testing."
+        }
+      ],
+      
+      stageOutput: [
+        "Completed adaptability assessment",
+        "Implemented secondary feature set",
+        "Connected necessary third-party integrations",
+        "Created automated workflows",
+        "Added basic admin and monitoring capabilities",
+        "Documented deliberate optimization deferrals",
+        "Tracked technical decisions with future plans",
+        "Completed end-to-end testing",
+        "A fully functional MVP ready for user testing"
+      ],
+      
+      commonPitfalls: [
+        "Feature bloat: Stay disciplined about which secondary features to implement",
+        "Custom development trap: Use existing services rather than building custom",
+        "Integration complexity: Keep third-party integrations simple and focused",
+        "Obsessing over edge cases: Focus on the happy path for the majority of users",
+        "Premature scalability: Build for dozens of users, not thousands"
+      ],
+      
+      keyExpertise: [
+        "API integration skills",
+        "No-code automation knowledge",
+        "Testing methodology understanding",
+        "Technical documentation ability",
+        "Service integration experience"
+      ],
+      
+      transitionToNext: "With a complete MVP featuring both core and secondary functionality, you're ready to move to Testing & Refinement, where you'll validate your product with real users.",
+      
+      resources: [
+        {
+          title: "Third-Party API Integration Best Practices",
+          url: "https://nordicapis.com/7-tips-for-building-great-api-integrations/",
+          type: "article"
+        },
+        {
+          title: "No-Code Automation Tools Comparison",
+          url: "https://zapier.com/blog/best-automation-tools/",
+          type: "article"
+        },
+        {
+          title: "Technical Debt Management",
+          url: "https://martinfowler.com/bliki/TechnicalDebt.html",
+          type: "article"
+        },
+        {
+          title: "End-to-End Testing Guide",
+          url: "https://www.browserstack.com/guide/end-to-end-testing",
+          type: "article"
+        }
+      ]
+    }
   },
   {
     id: 6,
@@ -1666,7 +2198,113 @@ export const stages: Stage[] = [
         type: "software",
         isRabbitExclusive: false
       }
-    ]
+    ],
+    guide: {
+      overview: "Testing & Refinement puts your MVP in front of real users to gather feedback and make critical improvements before launch. This stage focuses on identifying and fixing usability issues, validating that the product delivers value, and making final adjustments to enhance the user experience.",
+      
+      keyObjectives: [
+        "Test your MVP with representative users",
+        "Identify critical usability issues and pain points",
+        "Validate that the product delivers the expected value",
+        "Make targeted improvements based on feedback",
+        "Prepare the product for public launch"
+      ],
+      
+      process: [
+        {
+          name: "Test Planning",
+          duration: "45 minutes",
+          description: "Prepare for effective user testing. Use testing frameworks to define specific objectives, create task scenarios, determine success metrics, and prepare the test environment. This ensures you'll gather actionable data from user interactions."
+        },
+        {
+          name: "User Testing Execution",
+          duration: "3 hours",
+          description: "Conduct efficient user testing. Apply testing tools to recruit participants, run focused remote sessions, observe user behavior, and document insights. Focus on identifying usability issues and validating value delivery."
+        },
+        {
+          name: "Intuitiveness Assessment",
+          duration: "45 minutes",
+          description: "Evaluate interface intuitiveness. Apply appropriate testing frameworks to analyze users' navigation patterns, identify confusion points, and assess task completion success. This highlights where users struggle to understand your interface."
+        },
+        {
+          name: "First Impression Evaluation",
+          duration: "30 minutes",
+          description: "Test immediate clarity and impressions. Use testing tools to evaluate what users understand about your product in the first few seconds, what stands out, and whether your value proposition is immediately clear. This reveals how your product is initially perceived."
+        },
+        {
+          name: "Quality Assessment",
+          duration: "30 minutes",
+          description: "Reassess your product's completion level. Apply quality frameworks to review each feature on your quality scale, ensure your product meets minimum thresholds, and identify areas needing urgent attention. This confirms you're ready to launch at the current quality level."
+        },
+        {
+          name: "Critical Issue Resolution",
+          duration: "2 hours",
+          description: "Fix the most important problems. Apply appropriate development tools to prioritize and resolve critical usability issues, address showstopper bugs, and improve unclear workflows. Focus only on high-impact improvements."
+        },
+        {
+          name: "Usability Evaluation",
+          duration: "60 minutes",
+          description: "Systematically assess against usability principles. Use evaluation frameworks to check your interface against established standards, identify violations, and rate their severity. This provides a structured approach to identifying improvement opportunities."
+        },
+        {
+          name: "Monitoring Implementation",
+          duration: "45 minutes",
+          description: "Set up systems to track post-launch issues. Apply monitoring tools to implement error tracking, configure alerts, and set up performance monitoring. This ensures you'll have visibility into how your product performs after launch."
+        }
+      ],
+      
+      stageOutput: [
+        "Completed user testing with representative participants",
+        "Identified and documented usability issues",
+        "Fixed critical problems and showstoppers",
+        "Improved unclear or confusing aspects of the product",
+        "Verified appropriate quality level",
+        "Implemented error tracking and monitoring",
+        "Completed systematic usability evaluation",
+        "A refined MVP ready for launch"
+      ],
+      
+      commonPitfalls: [
+        "Defensive reactions: View criticism as valuable feedback, not personal attacks",
+        "Overreacting to single user opinions: Look for patterns across multiple users",
+        "Attempting to fix everything: Focus only on critical issues before launch",
+        "Testing with the wrong users: Ensure test participants match your target audience",
+        "Leading questions: Avoid influencing user behavior during testing"
+      ],
+      
+      keyExpertise: [
+        "User testing facilitation skills",
+        "Usability principles knowledge",
+        "Prioritization ability",
+        "Basic debugging skills",
+        "User feedback interpretation"
+      ],
+      
+      transitionToNext: "With a tested and refined MVP ready to go, you're prepared to move to Launch & Learn, where you'll release your product to early adopters and begin collecting real-world data.",
+      
+      resources: [
+        {
+          title: "Remote User Testing Guide",
+          url: "https://www.nngroup.com/articles/remote-usability-tests/",
+          type: "article"
+        },
+        {
+          title: "Usability Heuristics",
+          url: "https://www.nngroup.com/articles/ten-usability-heuristics/",
+          type: "article"
+        },
+        {
+          title: "Prioritizing Usability Issues",
+          url: "https://www.uxmatters.com/mt/archives/2009/06/prioritizing-usability-problems.php",
+          type: "article"
+        },
+        {
+          title: "Error Monitoring Tools Comparison",
+          url: "https://stackshare.io/error-monitoring",
+          type: "article"
+        }
+      ]
+    }
   },
   {
     id: 7,
@@ -1942,7 +2580,113 @@ export const stages: Stage[] = [
         type: "framework",
         isRabbitExclusive: false
       }
-    ]
+    ],
+    guide: {
+      overview: "Launch & Learn is the culmination of your Rabbit MVP process, where you release your product to early adopters and begin collecting real-world usage data. This stage focuses on a controlled launch, establishing learning systems, and making the critical decision about your product's future direction.",
+      
+      keyObjectives: [
+        "Successfully launch your MVP to early adopters",
+        "Implement systems for collecting user feedback and analytics",
+        "Monitor initial user behavior and engagement",
+        "Extract key learnings from the entire MVP process",
+        "Make a data-driven decision about next steps (continue, pivot, or abandon)"
+      ],
+      
+      process: [
+        {
+          name: "Launch Preparation",
+          duration: "90 minutes",
+          description: "Complete pre-launch tasks. Apply launch frameworks to run through comprehensive checklists, finalize messaging, verify systems, prepare support channels, and set up backup mechanisms. This ensures a smooth release process."
+        },
+        {
+          name: "Analytics Implementation",
+          duration: "60 minutes",
+          description: "Ensure you can measure what matters. Use analytics tools to implement appropriate tracking, set up key metrics based on your business goals, configure conversion funnels, and create initial dashboards. This provides visibility into how users interact with your product."
+        },
+        {
+          name: "Controlled Launch",
+          duration: "60 minutes",
+          description: "Release to your initial audience. Apply launch tools to deploy to a limited group of early adopters, send personalized invitations, and monitor initial activity. Focus on creating a positive first experience while watching for critical issues."
+        },
+        {
+          name: "Early Signal Assessment",
+          duration: "45 minutes",
+          description: "Evaluate initial feedback signals. Use appropriate validation frameworks to apply verification questions to early data, calculate risk scores, and identify potential red flags or positive signals. This gives you an early read on product-market fit indicators."
+        },
+        {
+          name: "Feedback System Implementation",
+          duration: "60 minutes",
+          description: "Create channels for ongoing insights. Apply feedback tools to implement in-product mechanisms, set up satisfaction surveys, create processes for user interviews, and establish systems for feature requests. This establishes continuous learning loops."
+        },
+        {
+          name: "Knowledge Capture",
+          duration: "60 minutes",
+          description: "Document reusable elements and learnings. Use knowledge frameworks to extract successful components, document key insights, add new elements to your tool library, and create templates from successful processes. This creates compounding value for future projects."
+        },
+        {
+          name: "User Analysis Framework",
+          duration: "45 minutes",
+          description: "Prepare for systematic user analysis. Apply analytics frameworks to define meaningful user cohorts, set up tracking for their behavior over time, create baseline metrics, and implement retention analysis. This enables data-driven improvement decisions."
+        },
+        {
+          name: "Strategic Direction Decision",
+          duration: "90 minutes",
+          description: "Make a data-driven next step decision. Use decision frameworks to review all data collected, evaluate performance against key metrics, consider resource constraints, and make a clear decision: persevere, pivot, or abandon. Document your rationale and create an appropriate action plan."
+        }
+      ],
+      
+      stageOutput: [
+        "Launched MVP to early adopters",
+        "Implemented comprehensive analytics",
+        "Collected initial user feedback",
+        "Completed early signal assessment",
+        "Established ongoing feedback mechanisms",
+        "Documented learnings and reusable components",
+        "Set up user cohort analysis framework",
+        "Made a clear strategic direction decision with action plan"
+      ],
+      
+      commonPitfalls: [
+        "Premature scaling: Focus on learning before growth",
+        "Vanity metrics: Measure what matters for your business, not just what looks good",
+        "Selective data interpretation: Consider all signals, not just positive ones",
+        "Decision avoidance: Make a clear choice about next steps",
+        "Failure to document learnings: Capture insights while they're fresh"
+      ],
+      
+      keyExpertise: [
+        "Basic analytics implementation knowledge",
+        "Data interpretation skills",
+        "Strategic decision-making ability",
+        "Product launch experience",
+        "Feedback collection and analysis"
+      ],
+      
+      transitionToNext: "Based on your pivot/persevere decision, you'll either begin planning for refinement and growth, define specific pivot changes and begin a new validation cycle, or document learnings and move to your next opportunity.",
+      
+      resources: [
+        {
+          title: "Product Analytics Implementation Guide",
+          url: "https://amplitude.com/blog/product-analytics-guide",
+          type: "article"
+        },
+        {
+          title: "User Feedback Collection Methods",
+          url: "https://www.hotjar.com/blog/user-feedback/",
+          type: "article"
+        },
+        {
+          title: "Cohort Analysis for Startups",
+          url: "https://www.geckoboard.com/best-practice/kpi-examples/cohort-analysis/",
+          type: "article"
+        },
+        {
+          title: "The Pivot or Persevere Decision",
+          url: "https://www.startuplessonslearned.com/2010/06/pivot-dont-jump-to-new-vision.html",
+          type: "article"
+        }
+      ]
+    }
   }
 ];
 

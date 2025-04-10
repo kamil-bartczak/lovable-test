@@ -9,30 +9,33 @@ import StageNavigation from "./StageNavigation";
 import StageInfoCard from "./StageInfoCard";
 import ToolGrid from "./ToolGrid";
 import ToolDetail from "./ToolDetail";
+import ToolkitFilters from "./ToolkitFilters";
 
-const Timeline = () => {
+const ToolkitTimeline = () => {
   const [activeTool, setActiveTool] = useState<Tool | null>(null);
   const [activeStageId, setActiveStageId] = useState<string>("1");
   const [activeCategory, setActiveCategory] = useState<number | null>(null);
   const [expandedDescription, setExpandedDescription] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   useEffect(() => {
     setActiveCategory(null);
+    setSearchQuery("");
   }, [activeStageId]);
 
-  const currentStage = findStageById(activeStageId);
+  const currentStage = findStageById(parseInt(activeStageId));
 
   return (
     <section id="stages" className={`py-24 relative overflow-hidden ${styles['highlight-bg']}`}>
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-5xl font-chakra font-bold mb-6 text-gray-900">7 Steps to MVP</h2>
+          <h2 className="text-5xl font-chakra font-bold mb-6 text-gray-900">Rabbit MVP Methodology</h2>
           <p className="text-xl text-gray-600">
-            A structured approach to building and validating your product in seven days.
+            A structured approach to building and validating your product through seven key stages.
           </p>
         </div>
         
-        {/* Scrollable Stage Navigation */}
+        {/* Interactive Timeline */}
         <StageNavigation 
           stages={stages} 
           activeStageId={activeStageId} 
@@ -54,17 +57,30 @@ const Timeline = () => {
               <TabsContent key={stage.id} value={stage.id.toString()} className={`mt-0 ${styles['animate-fadeIn']}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                   
-                  {/* Stage Info Card */}
-                  <StageInfoCard stage={stage} />
+                  {/* Stage Detail View */}
+                  <StageInfoCard 
+                    stage={stage} 
+                  />
                   
-                  {/* Tools Section */}
+                  {/* Tools View with Filtering */}
                   {currentStage && (
-                    <ToolGrid 
-                      stage={stage}
-                      activeCategory={activeCategory}
-                      setActiveCategory={setActiveCategory}
-                      setActiveTool={setActiveTool}
-                    />
+                    <div className="col-span-1 lg:col-span-2 space-y-6">
+                      <ToolkitFilters 
+                        stage={stage}
+                        activeCategory={activeCategory}
+                        setActiveCategory={setActiveCategory}
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                      />
+                      
+                      <ToolGrid 
+                        stage={stage}
+                        activeCategory={activeCategory}
+                        setActiveCategory={setActiveCategory}
+                        setActiveTool={setActiveTool}
+                        searchQuery={searchQuery}
+                      />
+                    </div>
                   )}
                 </div>
               </TabsContent>
@@ -73,7 +89,7 @@ const Timeline = () => {
         </div>
       </div>
       
-      {/* Tool Detail Drawer */}
+      {/* Tool Detail Modal */}
       {activeTool && currentStage && (
         <ToolDetail
           tool={activeTool}
@@ -87,4 +103,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline; 
+export default ToolkitTimeline; 
