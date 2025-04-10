@@ -2,6 +2,7 @@ import React from "react";
 import { X, Check, ExternalLink, Tag, Link2, BookOpen, Zap, Download, Star, BrainCircuit, Clock, AlertTriangle } from "lucide-react";
 import { Tool, Stage } from "./types";
 import styles from "@/styles/timeline.module.css";
+import { useScrollLock } from "@/hooks/use-scroll-lock";
 
 interface ToolDetailProps {
   tool: Tool;
@@ -18,6 +19,9 @@ const ToolDetail: React.FC<ToolDetailProps> = ({
   setExpandedDescription, 
   onClose 
 }) => {
+  // Lock body scroll when modal is open
+  useScrollLock(true);
+  
   // Find the category for this tool
   const category = currentStage.categories.find(c => c.id === tool.category);
   

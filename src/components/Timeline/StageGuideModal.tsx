@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { X, Clock, Check, ArrowRight, Lightbulb, List, BookOpen, AlertCircle, Sparkles, Puzzle, Award, Activity, PanelRight, Compass } from "lucide-react";
 import { Stage } from "./types";
 import styles from "@/styles/timeline.module.css";
+import { useScrollLock } from "@/hooks/use-scroll-lock";
 
 interface StageGuideModalProps {
   stage: Stage;
@@ -10,6 +11,9 @@ interface StageGuideModalProps {
 
 const StageGuideModal: React.FC<StageGuideModalProps> = ({ stage, onClose }) => {
   const [activeTab, setActiveTab] = useState<string>("overview");
+  
+  // Lock body scroll when modal is open
+  useScrollLock(true);
   
   if (!stage.guide) {
     return (
