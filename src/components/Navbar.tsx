@@ -46,7 +46,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <a href="#" className="flex items-center">
               <RabbitLogo className="h-8 w-8" />
-              <span className="ml-2 text-xl font-normal text-gray-900 font-chakra tracking-wide">Rabbit MVP</span>
+              <span className="text-xl font-normal text-gray-900 font-chakra tracking-wide">Rabbit MVP</span>
             </a>
           </div>
           

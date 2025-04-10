@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
               <RabbitLogo className="h-8 w-8"/>
-              <span className="ml-2 text-xl font-light text-gray-900 font-chakra">Rabbit MVP</span>
+              <span className="text-xl font-light text-gray-900 font-chakra">Rabbit MVP</span>
             </div>
             <p className="text-gray-600 mb-4">
               A methodology to create Minimum Viable Products in just 7 days with speed and precision.
