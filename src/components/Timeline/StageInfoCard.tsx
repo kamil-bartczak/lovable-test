@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Clock, Check, ArrowRight, ExternalLink } from "lucide-react";
+import { Clock, Check, ArrowRight, BookOpen } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Stage } from "./types";
 import styles from "@/styles/timeline.module.css";
@@ -136,7 +136,7 @@ const StageInfoCard: React.FC<StageInfoCardProps> = ({ stage }) => {
               type="button"
             >
               <span>Read Full Guide</span>
-              <ExternalLink size={14} />
+              <BookOpen size={14} />
             </button>
           </div>
         </CardContent>

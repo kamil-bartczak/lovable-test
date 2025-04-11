@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { List } from "lucide-react";
 import { Stage, Tool } from "./types";
 import ToolCard from "./ToolCard";
 import ToolsModal from "./ToolsModal";
@@ -54,7 +54,7 @@ const ToolGrid: React.FC<ToolGridProps> = ({
           onClick={() => setShowMoreModal(true)}
         >
           <span>Show {nonFeaturedCount} more tools</span>
-          <ChevronDown size={16} />
+          <List size={16} />
         </button>
       )}
       
