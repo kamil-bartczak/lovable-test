@@ -3,13 +3,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tool } from "./types";
 import { stages, findStageById } from "./data";
 import styles from "@/styles/timeline.module.css";
+import { Wrench } from "lucide-react";
 
 // Import sub-components
 import StageNavigation from "./StageNavigation";
 import StageInfoCard from "./StageInfoCard";
 import ToolGrid from "./ToolGrid";
 import ToolDetail from "./ToolDetail";
-import ToolkitFilters from "./ToolkitFilters";
 
 const ToolkitTimeline = () => {
   const [activeTool, setActiveTool] = useState<Tool | null>(null);
@@ -62,23 +62,24 @@ const ToolkitTimeline = () => {
                     stage={stage} 
                   />
                   
-                  {/* Tools View with Filtering */}
+                  {/* Tools View without Filtering */}
                   {currentStage && (
                     <div className="col-span-1 lg:col-span-2 space-y-6">
-                      <ToolkitFilters 
-                        stage={stage}
-                        activeCategory={activeCategory}
-                        setActiveCategory={setActiveCategory}
-                        searchQuery={searchQuery}
-                        setSearchQuery={setSearchQuery}
-                      />
+                      <div className="flex items-center gap-2">
+                        <Wrench 
+                          size={18} 
+                          className="text-white p-1 rounded-full"
+                          style={{ background: `linear-gradient(90deg, ${stage.colorStart}, ${stage.colorEnd})` }}  
+                        />
+                        <h3 className="text-xl font-medium text-gray-900">Featured Tools</h3>
+                      </div>
                       
                       <ToolGrid 
                         stage={stage}
-                        activeCategory={activeCategory}
+                        activeCategory={null}
                         setActiveCategory={setActiveCategory}
                         setActiveTool={setActiveTool}
-                        searchQuery={searchQuery}
+                        searchQuery=""
                       />
                     </div>
                   )}

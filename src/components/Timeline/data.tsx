@@ -58,6 +58,156 @@ export const stages: Stage[] = [
         isFeatured: false
       },
       { 
+        id: 1035, 
+        name: "Business Model Canvas", 
+        category: 103,
+        description: "A strategic management template for developing new or documenting existing business models.", 
+        link: "#", 
+        icon: <FileText size={20} />,
+        longDescription: "The Business Model Canvas is a strategic management template used for developing new business models and documenting existing ones. It helps visualize the key components of your business on a single page, making it easier to identify and validate your business hypothesis.",
+        benefits: [
+          "Provides a holistic view of your entire business on one page",
+          "Helps identify connections between different business components",
+          "Facilitates team discussions and alignment on business strategy",
+          "Allows for quick iteration and testing of business hypotheses"
+        ],
+        howTo: [
+          "Start by defining your customer segments in detail",
+          "Articulate your unique value proposition for each segment",
+          "Map out key resources, activities, and partnerships needed",
+          "Define your revenue streams and cost structure"
+        ],
+        resources: [
+          { title: "Strategyzer - Business Model Canvas Explained", url: "#", type: "article" },
+          { title: "Business Model Canvas Template (PDF)", url: "#", type: "template" },
+          { title: "Video Tutorial: Filling Out Your Canvas", url: "#", type: "video" }
+        ],
+        duration: "30-60 min",
+        difficulty: "beginner",
+        type: "template",
+        isFeatured: false
+      },
+      { 
+        id: 1036, 
+        name: "Business Model Canvas", 
+        category: 103,
+        description: "A strategic management template for developing new or documenting existing business models.", 
+        link: "#", 
+        icon: <FileText size={20} />,
+        longDescription: "The Business Model Canvas is a strategic management template used for developing new business models and documenting existing ones. It helps visualize the key components of your business on a single page, making it easier to identify and validate your business hypothesis.",
+        benefits: [
+          "Provides a holistic view of your entire business on one page",
+          "Helps identify connections between different business components",
+          "Facilitates team discussions and alignment on business strategy",
+          "Allows for quick iteration and testing of business hypotheses"
+        ],
+        howTo: [
+          "Start by defining your customer segments in detail",
+          "Articulate your unique value proposition for each segment",
+          "Map out key resources, activities, and partnerships needed",
+          "Define your revenue streams and cost structure"
+        ],
+        resources: [
+          { title: "Strategyzer - Business Model Canvas Explained", url: "#", type: "article" },
+          { title: "Business Model Canvas Template (PDF)", url: "#", type: "template" },
+          { title: "Video Tutorial: Filling Out Your Canvas", url: "#", type: "video" }
+        ],
+        duration: "30-60 min",
+        difficulty: "beginner",
+        type: "template",
+        isFeatured: false
+      },
+      { 
+        id: 1037, 
+        name: "Business Model Canvas", 
+        category: 103,
+        description: "A strategic management template for developing new or documenting existing business models.", 
+        link: "#", 
+        icon: <FileText size={20} />,
+        longDescription: "The Business Model Canvas is a strategic management template used for developing new business models and documenting existing ones. It helps visualize the key components of your business on a single page, making it easier to identify and validate your business hypothesis.",
+        benefits: [
+          "Provides a holistic view of your entire business on one page",
+          "Helps identify connections between different business components",
+          "Facilitates team discussions and alignment on business strategy",
+          "Allows for quick iteration and testing of business hypotheses"
+        ],
+        howTo: [
+          "Start by defining your customer segments in detail",
+          "Articulate your unique value proposition for each segment",
+          "Map out key resources, activities, and partnerships needed",
+          "Define your revenue streams and cost structure"
+        ],
+        resources: [
+          { title: "Strategyzer - Business Model Canvas Explained", url: "#", type: "article" },
+          { title: "Business Model Canvas Template (PDF)", url: "#", type: "template" },
+          { title: "Video Tutorial: Filling Out Your Canvas", url: "#", type: "video" }
+        ],
+        duration: "30-60 min",
+        difficulty: "beginner",
+        type: "template",
+        isFeatured: false
+      },
+      { 
+        id: 1038, 
+        name: "Business Model Canvas", 
+        category: 103,
+        description: "A strategic management template for developing new or documenting existing business models.", 
+        link: "#", 
+        icon: <FileText size={20} />,
+        longDescription: "The Business Model Canvas is a strategic management template used for developing new business models and documenting existing ones. It helps visualize the key components of your business on a single page, making it easier to identify and validate your business hypothesis.",
+        benefits: [
+          "Provides a holistic view of your entire business on one page",
+          "Helps identify connections between different business components",
+          "Facilitates team discussions and alignment on business strategy",
+          "Allows for quick iteration and testing of business hypotheses"
+        ],
+        howTo: [
+          "Start by defining your customer segments in detail",
+          "Articulate your unique value proposition for each segment",
+          "Map out key resources, activities, and partnerships needed",
+          "Define your revenue streams and cost structure"
+        ],
+        resources: [
+          { title: "Strategyzer - Business Model Canvas Explained", url: "#", type: "article" },
+          { title: "Business Model Canvas Template (PDF)", url: "#", type: "template" },
+          { title: "Video Tutorial: Filling Out Your Canvas", url: "#", type: "video" }
+        ],
+        duration: "30-60 min",
+        difficulty: "beginner",
+        type: "template",
+        isFeatured: false
+      },
+      { 
+        id: 1039, 
+        name: "Business Model Canvas", 
+        category: 103,
+        description: "A strategic management template for developing new or documenting existing business models.", 
+        link: "#", 
+        icon: <FileText size={20} />,
+        longDescription: "The Business Model Canvas is a strategic management template used for developing new business models and documenting existing ones. It helps visualize the key components of your business on a single page, making it easier to identify and validate your business hypothesis.",
+        benefits: [
+          "Provides a holistic view of your entire business on one page",
+          "Helps identify connections between different business components",
+          "Facilitates team discussions and alignment on business strategy",
+          "Allows for quick iteration and testing of business hypotheses"
+        ],
+        howTo: [
+          "Start by defining your customer segments in detail",
+          "Articulate your unique value proposition for each segment",
+          "Map out key resources, activities, and partnerships needed",
+          "Define your revenue streams and cost structure"
+        ],
+        resources: [
+          { title: "Strategyzer - Business Model Canvas Explained", url: "#", type: "article" },
+          { title: "Business Model Canvas Template (PDF)", url: "#", type: "template" },
+          { title: "Video Tutorial: Filling Out Your Canvas", url: "#", type: "video" }
+        ],
+        duration: "30-60 min",
+        difficulty: "beginner",
+        type: "template",
+        isFeatured: false
+      },
+      { 
         id: 1002, 
         name: "Value Proposition Canvas", 
         category: 103,
