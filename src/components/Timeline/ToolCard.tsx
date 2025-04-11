@@ -82,7 +82,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, stage, onClick }) => {
       <CardFooter className="pt-0 flex justify-between items-center">
         <div className="flex items-center gap-2">
           {/* Tool badges */}
-          {tool.isRabbitExclusive && (
+          {tool.isFeatured && (
             <span className="inline-flex items-center text-[10px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-700">
               <Star size={10} className="mr-0.5" />
               Rabbit

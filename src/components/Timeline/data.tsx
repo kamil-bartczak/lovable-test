@@ -9,19 +9,7 @@ import {
   BarChart2, List, Send, Server, ShieldCheck, Smartphone, Store,
   Video, ClipboardList, MousePointer, CheckSquare, GitBranch
 } from "lucide-react";
-import { ToolTag, Category, Tool, Stage, Resource } from "./types";
-
-export const toolTags: ToolTag[] = [
-  { id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" },
-  { id: 2, name: "Research", color: "bg-zinc-100 text-zinc-700" },
-  { id: 3, name: "Design", color: "bg-stone-100 text-stone-700" },
-  { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" },
-  { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" },
-  { id: 6, name: "Launch", color: "bg-slate-100 text-slate-700" },
-  { id: 7, name: "Analytics", color: "bg-zinc-100 text-zinc-700" },
-  { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" },
-  { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" },
-];
+import { Category, Tool, Stage, Resource } from "./types";
 
 export const stages: Stage[] = [
   {
@@ -42,11 +30,10 @@ export const stages: Stage[] = [
       { 
         id: 1001, 
         name: "Business Model Canvas", 
-        category: 101,
+        category: 103,
         description: "A strategic management template for developing new or documenting existing business models.", 
         link: "#", 
         icon: <FileText size={20} />,
-        tags: [{ id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" }],
         longDescription: "The Business Model Canvas is a strategic management template used for developing new business models and documenting existing ones. It helps visualize the key components of your business on a single page, making it easier to identify and validate your business hypothesis.",
         benefits: [
           "Provides a holistic view of your entire business on one page",
@@ -68,16 +55,15 @@ export const stages: Stage[] = [
         duration: "30-60 min",
         difficulty: "beginner",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 1002, 
         name: "Value Proposition Canvas", 
-        category: 101,
+        category: 103,
         description: "A tool to ensure a product or service is positioned around what the customer values and needs.", 
         link: "#", 
         icon: <Target size={20} />,
-        tags: [{ id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" }],
         longDescription: "The Value Proposition Canvas helps you design products and services that customers actually want by focusing on their jobs, pains, and gains. It's a perfect complement to the Business Model Canvas and ensures your value proposition matches customer needs.",
         benefits: [
           "Focus product development on real customer needs",
@@ -98,19 +84,15 @@ export const stages: Stage[] = [
         duration: "30-45 min",
         difficulty: "beginner",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 1003, 
         name: "Shame Index Calculator", 
-        category: 101,
+        category: 101, 
         description: "Determine product features that deliver core value while maintaining a manageable 6-7/10 on the shame scale.", 
         link: "#", 
         icon: <BarChart2 size={20} />,
-        tags: [
-          { id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "The Shame Index Calculator is a Rabbit MVP exclusive tool that helps you find the sweet spot for your MVP features – delivering enough value while accepting some imperfection. It quantifies your comfort with launching features that aren't fully polished, targeting a 6-7/10 'shame score' that balances speed with quality.",
         benefits: [
           "Overcome perfectionism and launch faster",
@@ -131,7 +113,7 @@ export const stages: Stage[] = [
         duration: "20-30 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 1004, 
@@ -140,10 +122,6 @@ export const stages: Stage[] = [
         description: "Use AI tools to analyze market trends, competition, and identify potential opportunities.", 
         link: "#", 
         icon: <Search size={20} />,
-        tags: [
-          { id: 2, name: "Research", color: "bg-zinc-100 text-zinc-700" },
-          { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" }
-        ],
         longDescription: "This tool leverages AI to quickly analyze market conditions, competitive landscape, and industry trends. It helps you identify underserved needs and potential opportunities, providing data-driven insights to inform your MVP strategy.",
         benefits: [
           "Save time on market research with AI-powered analysis",
@@ -164,7 +142,7 @@ export const stages: Stage[] = [
         duration: "1-2 hours",
         difficulty: "beginner",
         type: "ai",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 1005, 
@@ -173,10 +151,6 @@ export const stages: Stage[] = [
         description: "Identify and define your target customer segments with specific characteristics and needs.", 
         link: "#", 
         icon: <Users size={20} />,
-        tags: [
-          { id: 2, name: "Research", color: "bg-zinc-100 text-zinc-700" },
-          { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" }
-        ],
         longDescription: "This tool helps you identify specific customer segments for your MVP, complete with detailed personas and characteristics. It ensures your product development is focused on real user needs and helps you prioritize which segments to target first.",
         benefits: [
           "Focus your MVP on specific user needs",
@@ -197,7 +171,7 @@ export const stages: Stage[] = [
         duration: "45-60 min",
         difficulty: "intermediate",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 1006, 
@@ -206,10 +180,6 @@ export const stages: Stage[] = [
         description: "Generate 8 small variations of your EXISTING idea, then reduce to the 3 best candidates for testing.", 
         link: "#", 
         icon: <Workflow size={20} />,
-        tags: [
-          { id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "The 8 Variant Sequence is a Rabbit MVP exclusive tool for exploring different approaches to solving the same problem. It helps you generate variations of your existing idea, then systematically evaluate and reduce them to the 3 strongest candidates for testing.",
         benefits: [
           "Explore diverse solutions to the same problem",
@@ -230,7 +200,7 @@ export const stages: Stage[] = [
         duration: "60-90 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 1007, 
@@ -239,7 +209,6 @@ export const stages: Stage[] = [
         description: "Prioritize features and initiatives based on Reach, Impact, Confidence, and Effort metrics.", 
         link: "#", 
         icon: <BarChart size={20} />,
-        tags: [{ id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" }],
         longDescription: "The RICE framework helps you objectively prioritize features and initiatives by scoring them on four factors: Reach (how many users will this affect), Impact (how much will it affect them), Confidence (how sure are you about these estimates), and Effort (how much work is required).",
         benefits: [
           "Make objective, data-driven prioritization decisions",
@@ -260,7 +229,7 @@ export const stages: Stage[] = [
         duration: "30-45 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 1008, 
@@ -269,10 +238,6 @@ export const stages: Stage[] = [
         description: "Create and prioritize 5-10 key business hypotheses that need validation.", 
         link: "#", 
         icon: <ClipboardList size={20} />,
-        tags: [
-          { id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" },
-          { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" }
-        ],
         longDescription: "This tool helps you formulate clear, testable business hypotheses for your MVP. It guides you through creating structured hypotheses about customer problems, solutions, revenue models, and other key aspects of your business model.",
         benefits: [
           "Focus validation efforts on the most critical assumptions",
@@ -293,7 +258,7 @@ export const stages: Stage[] = [
         duration: "45-60 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       }
     ],
     guide: {
@@ -426,10 +391,6 @@ export const stages: Stage[] = [
         description: "Conduct 5 remote validations (15-20 minutes each) to measure the Validation Velocity Index.", 
         link: "#", 
         icon: <Video size={20} />,
-        tags: [
-          { id: 2, name: "Research", color: "bg-zinc-100 text-zinc-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "Remote Micro-Validation is a Rabbit MVP exclusive technique for conducting short, focused validation sessions with potential customers. The approach emphasizes speed and quantity of feedback over lengthy, in-depth interviews, enabling rapid validation of core hypotheses.",
         benefits: [
           "Get rapid feedback from 5+ real potential customers",
@@ -451,7 +412,7 @@ export const stages: Stage[] = [
         duration: "2-3 hours",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 2002, 
@@ -460,10 +421,6 @@ export const stages: Stage[] = [
         description: "5 key questions checking the reality of the problem and solution value.", 
         link: "#", 
         icon: <AlertCircle size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "The Early Warning System is a Rabbit MVP exclusive tool consisting of 5 critical validation questions that help identify flawed assumptions early. It acts as a reality check for your MVP concept before you invest significant time in development.",
         benefits: [
           "Quickly identify fundamental flaws in your concept",
@@ -484,7 +441,7 @@ export const stages: Stage[] = [
         duration: "20-30 min",
         difficulty: "beginner",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 2003, 
@@ -493,7 +450,6 @@ export const stages: Stage[] = [
         description: "Create interview questions that prevent biased responses and get honest feedback.", 
         link: "#", 
         icon: <MessageSquare size={20} />,
-        tags: [{ id: 2, name: "Research", color: "bg-zinc-100 text-zinc-700" }],
         longDescription: "Based on Rob Fitzpatrick's 'The Mom Test' methodology, this script builder helps you craft interview questions that prevent bias and extract honest feedback from potential customers, even when they might be inclined to be nice or tell you what you want to hear.",
         benefits: [
           "Get honest feedback instead of false positives",
@@ -514,7 +470,7 @@ export const stages: Stage[] = [
         duration: "30-45 min",
         difficulty: "intermediate",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 2004, 
@@ -523,10 +479,6 @@ export const stages: Stage[] = [
         description: "Create effective customer interview scripts with AI to validate your business hypotheses.", 
         link: "#", 
         icon: <MessageSquare size={20} />,
-        tags: [
-          { id: 2, name: "Research", color: "bg-zinc-100 text-zinc-700" },
-          { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" }
-        ],
         longDescription: "This AI-powered tool helps you generate effective customer interview scripts specifically designed to validate your business hypotheses. It ensures you ask the right questions that will uncover genuine insights about your target customers' problems and needs.",
         benefits: [
           "Ask the right questions to validate assumptions",
@@ -547,7 +499,7 @@ export const stages: Stage[] = [
         duration: "15-30 min",
         difficulty: "beginner",
         type: "ai",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 2005, 
@@ -556,7 +508,6 @@ export const stages: Stage[] = [
         description: "Create concise, effective surveys with maximum 5 questions to validate key hypotheses.", 
         link: "#", 
         icon: <ClipboardList size={20} />,
-        tags: [{ id: 2, name: "Research", color: "bg-zinc-100 text-zinc-700" }],
         longDescription: "This tool helps you create ultra-focused surveys with just 5 questions that maximize completion rates while validating your core business hypotheses. It ensures every question serves a specific purpose in your validation process.",
         benefits: [
           "Higher completion rates with focused questions",
@@ -577,7 +528,7 @@ export const stages: Stage[] = [
         duration: "20-30 min",
         difficulty: "beginner",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 2006, 
@@ -586,10 +537,6 @@ export const stages: Stage[] = [
         description: "Create a minimal landing page to test market interest through sign-ups and interactions.", 
         link: "#", 
         icon: <Globe size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" },
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }
-        ],
         longDescription: "A Smoke Test Landing Page helps you validate market interest without building your actual product. It presents your value proposition and measures interest through email sign-ups, pre-orders, or other conversion metrics, giving you quantitative validation data.",
         benefits: [
           "Test market interest with minimal investment",
@@ -610,7 +557,7 @@ export const stages: Stage[] = [
         duration: "2-4 hours",
         difficulty: "intermediate",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 2007, 
@@ -619,10 +566,6 @@ export const stages: Stage[] = [
         description: "Use AI to analyze customer feedback and identify patterns and insights.", 
         link: "#", 
         icon: <BarChart size={20} />,
-        tags: [
-          { id: 7, name: "Analytics", color: "bg-zinc-100 text-zinc-700" },
-          { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" }
-        ],
         longDescription: "This AI-powered tool helps you analyze qualitative feedback from customer interviews, surveys, and other sources. It identifies patterns, sentiment, and key insights that might be missed through manual analysis, helping you make data-driven decisions about your MVP.",
         benefits: [
           "Identify patterns across different feedback sources",
@@ -643,7 +586,7 @@ export const stages: Stage[] = [
         duration: "30-60 min",
         difficulty: "beginner",
         type: "ai",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 2008, 
@@ -652,7 +595,6 @@ export const stages: Stage[] = [
         description: "Define the minimum set of features required to solve the core customer problem.", 
         link: "#", 
         icon: <Layers size={20} />,
-        tags: [{ id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" }],
         longDescription: "The MVF Builder helps you identify and prioritize the absolute minimum set of features needed to solve your customers' core problem. It forces extreme prioritization to ensure your MVP stays focused and can be built quickly.",
         benefits: [
           "Focus development on what matters most",
@@ -673,7 +615,7 @@ export const stages: Stage[] = [
         duration: "45-60 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       }
     ],
     guide: {
@@ -806,10 +748,6 @@ export const stages: Stage[] = [
         description: "Three 15-minute sessions from the perspectives of visionary, engineer, and entrepreneur.", 
         link: "#", 
         icon: <Users size={20} />,
-        tags: [
-          { id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "Three Hat Architecture is a Rabbit MVP exclusive approach for rapid solution design. It involves three sequential 15-minute sessions where you adopt different mindsets: the visionary (what's ideal?), the engineer (what's feasible?), and the entrepreneur (what's viable?). This structured approach ensures a balanced solution design.",
         benefits: [
           "Balance innovation, feasibility, and business viability",
@@ -830,7 +768,7 @@ export const stages: Stage[] = [
         duration: "45-60 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 3002, 
@@ -839,10 +777,6 @@ export const stages: Stage[] = [
         description: "Adapt solutions from unrelated industries to your project for innovative approaches.", 
         link: "#", 
         icon: <Repeat size={20} />,
-        tags: [
-          { id: 3, name: "Design", color: "bg-stone-100 text-stone-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "Inverted Competition is a Rabbit MVP exclusive technique that draws inspiration from unrelated industries to solve your specific challenges. By examining how completely different businesses solve similar functional problems, you can discover innovative approaches that haven't been applied in your industry yet.",
         benefits: [
           "Discover unique approaches not used by direct competitors",
@@ -863,7 +797,7 @@ export const stages: Stage[] = [
         duration: "60-90 min",
         difficulty: "advanced",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 3003, 
@@ -872,7 +806,6 @@ export const stages: Stage[] = [
         description: "Rapidly sketch 8 solution variations in 8 minutes when working alone.", 
         link: "#", 
         icon: <PenTool size={20} />,
-        tags: [{ id: 3, name: "Design", color: "bg-stone-100 text-stone-700" }],
         longDescription: "Solo Crazy 8's adapts the popular group design exercise for individuals. It challenges you to rapidly sketch 8 different solution approaches in just 8 minutes, forcing creative thinking and preventing fixation on a single solution path.",
         benefits: [
           "Generate multiple solution approaches quickly",
@@ -893,7 +826,7 @@ export const stages: Stage[] = [
         duration: "15-20 min",
         difficulty: "beginner",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 3004, 
@@ -902,10 +835,6 @@ export const stages: Stage[] = [
         description: "Use AI to map user journeys through your product, identifying key interactions and potential issues.", 
         link: "#", 
         icon: <GitMerge size={20} />,
-        tags: [
-          { id: 3, name: "Design", color: "bg-stone-100 text-stone-700" },
-          { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" }
-        ],
         longDescription: "This AI-powered tool helps you quickly map out the complete user journey through your product, from initial discovery to core value delivery. It identifies key interaction points, potential friction, and opportunities for improvement, ensuring a cohesive user experience.",
         benefits: [
           "Visualize the complete user experience",
@@ -926,7 +855,7 @@ export const stages: Stage[] = [
         duration: "30-45 min",
         difficulty: "beginner",
         type: "ai",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 3005, 
@@ -935,10 +864,6 @@ export const stages: Stage[] = [
         description: "Generate low-fidelity wireframes using AI based on your requirements and user flows.", 
         link: "#", 
         icon: <Layers size={20} />,
-        tags: [
-          { id: 3, name: "Design", color: "bg-stone-100 text-stone-700" },
-          { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" }
-        ],
         longDescription: "This tool uses AI to rapidly generate UI wireframes based on your product requirements and user flows. It creates low-fidelity designs that can be quickly iterated on, saving significant time in the initial design phase.",
         benefits: [
           "Generate wireframes without design skills",
@@ -953,13 +878,13 @@ export const stages: Stage[] = [
           "Create a cohesive flow between screens"
         ],
         resources: [
-          { title: "Wireframing Prompt Library", url: "#", type: "template" },
+          { title: "Wireframing Prompts Library", url: "#", type: "template" },
           { title: "Wireframe Refinement Guide", url: "#", type: "article" }
         ],
         duration: "45-90 min",
         difficulty: "beginner",
         type: "ai",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 3006, 
@@ -968,7 +893,6 @@ export const stages: Stage[] = [
         description: "Choose the optimal technology stack for your MVP based on requirements, skills, and constraints.", 
         link: "#", 
         icon: <Layers size={20} />,
-        tags: [{ id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }],
         longDescription: "This tool helps you select the ideal technology stack for your MVP based on your specific requirements, existing skills, and project constraints. It guides you through evaluating options and making informed decisions about frameworks, languages, and tools.",
         benefits: [
           "Make informed technology choices for your MVP",
@@ -989,7 +913,7 @@ export const stages: Stage[] = [
         duration: "60-90 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 3007, 
@@ -998,7 +922,6 @@ export const stages: Stage[] = [
         description: "Classify features as Must have, Should have, Could have, Won't have for clear prioritization.", 
         link: "#", 
         icon: <FileText size={20} />,
-        tags: [{ id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" }],
         longDescription: "The MoSCoW Method helps you prioritize features for your MVP by categorizing them into four groups: Must have (essential), Should have (important), Could have (desired), and Won't have (not for this version). This creates clarity on what to build first and what to defer.",
         benefits: [
           "Create clear feature prioritization",
@@ -1019,7 +942,7 @@ export const stages: Stage[] = [
         duration: "30-45 min",
         difficulty: "beginner",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 3008, 
@@ -1028,7 +951,6 @@ export const stages: Stage[] = [
         description: "Evaluate technical feasibility of ideas in relation to available time and resources.", 
         link: "#", 
         icon: <CheckCircle size={20} />,
-        tags: [{ id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }],
         longDescription: "The Technical Feasibility Matrix helps you objectively assess how realistic it is to implement various features within your MVP timeframe and resource constraints. It prevents scope creep and ensures your technical plan is achievable.",
         benefits: [
           "Identify technically challenging features early",
@@ -1050,7 +972,7 @@ export const stages: Stage[] = [
         duration: "45-60 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       }
     ],
     guide: {
@@ -1183,10 +1105,6 @@ export const stages: Stage[] = [
         description: "Implement one extreme feature that breaks conventions and creates a unique value proposition.", 
         link: "#", 
         icon: <Zap size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "One Deliberate Insanity is a Rabbit MVP exclusive approach that encourages you to implement one extreme, unconventional feature in your MVP that differentiates it dramatically from competitors. This 'insane' feature becomes your unique selling proposition and creates memorable product experiences.",
         benefits: [
           "Create a genuine differentiator for your product",
@@ -1207,7 +1125,7 @@ export const stages: Stage[] = [
         duration: "90-120 min",
         difficulty: "advanced",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 4002, 
@@ -1216,11 +1134,6 @@ export const stages: Stage[] = [
         description: "Leverage AI components and prompts from previous projects to accelerate development.", 
         link: "#", 
         icon: <Repeat size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" },
-          { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "The Meta-Rabbit Framework is a proprietary system for reusing and adapting AI components, code snippets, and prompts from previous Rabbit MVP projects. It creates a compounding efficiency gain, where each new project benefits from all previous ones.",
         benefits: [
           "Accelerate development with pre-built components",
@@ -1241,7 +1154,7 @@ export const stages: Stage[] = [
         duration: "Ongoing",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 4003, 
@@ -1250,9 +1163,6 @@ export const stages: Stage[] = [
         description: "Choose the right no-code/low-code platform for your specific MVP needs.", 
         link: "#", 
         icon: <LayoutDashboard size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }
-        ],
         longDescription: "This tool helps you evaluate and select the most appropriate no-code or low-code platform for your specific MVP requirements. It compares platforms based on capabilities, learning curve, integration options, and scalability to find your optimal match.",
         benefits: [
           "Find the optimal platform for your use case",
@@ -1273,7 +1183,7 @@ export const stages: Stage[] = [
         duration: "30-60 min",
         difficulty: "beginner",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 4004, 
@@ -1282,10 +1192,6 @@ export const stages: Stage[] = [
         description: "Use AI to generate code for specific components and features of your MVP.", 
         link: "#", 
         icon: <Code size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" },
-          { id: 8, name: "AI-Powered", color: "bg-purple-100 text-purple-700" }
-        ],
         longDescription: "This tool leverages AI to generate functional code for various components of your MVP. It can create everything from UI components to backend functionality, significantly accelerating development speed even for technical founders.",
         benefits: [
           "Generate working code without extensive programming",
@@ -1306,7 +1212,7 @@ export const stages: Stage[] = [
         duration: "Varies by component",
         difficulty: "intermediate",
         type: "ai",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 4005, 
@@ -1315,10 +1221,6 @@ export const stages: Stage[] = [
         description: "Pre-built interface components that can be quickly assembled into applications.", 
         link: "#", 
         icon: <Layers size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" },
-          { id: 3, name: "Design", color: "bg-stone-100 text-stone-700" }
-        ],
         longDescription: "This curated library of UI components provides ready-to-use interface elements that can be quickly assembled into a cohesive application. It includes everything from basic inputs to complex interactive elements, all designed for rapid implementation.",
         benefits: [
           "Accelerate UI development with pre-built components",
@@ -1339,7 +1241,7 @@ export const stages: Stage[] = [
         duration: "Ongoing",
         difficulty: "beginner",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 4006, 
@@ -1348,9 +1250,6 @@ export const stages: Stage[] = [
         description: "Tools that simplify connecting your application with third-party services.", 
         link: "#", 
         icon: <Link2 size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }
-        ],
         longDescription: "This tool helps you quickly integrate third-party APIs and services into your MVP without extensive custom code. It provides connectors, documentation, and implementation guides for common services like payments, authentication, maps, and more.",
         benefits: [
           "Add powerful functionality through existing services",
@@ -1371,7 +1270,7 @@ export const stages: Stage[] = [
         duration: "Varies by integration",
         difficulty: "intermediate",
         type: "software",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 4007, 
@@ -1380,9 +1279,6 @@ export const stages: Stage[] = [
         description: "4-hour block of intensive work on a specific feature or component.", 
         link: "#", 
         icon: <Clock size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }
-        ],
         longDescription: "Development Sprints are focused 4-hour blocks dedicated to implementing a specific feature or component of your MVP. The time constraint creates urgency and focus, helping you make significant progress in a short period.",
         benefits: [
           "Create intense focus on a specific implementation goal",
@@ -1403,7 +1299,7 @@ export const stages: Stage[] = [
         duration: "4 hours",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 4008, 
@@ -1412,9 +1308,6 @@ export const stages: Stage[] = [
         description: "Quickly design and implement a minimal database schema for your MVP.", 
         link: "#", 
         icon: <Database size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }
-        ],
         longDescription: "This tool helps you design a streamlined database schema that meets your MVP's data requirements without unnecessary complexity. It focuses on the minimum viable data structure while ensuring good practices for future scalability.",
         benefits: [
           "Create an appropriate data structure for your MVP",
@@ -1435,7 +1328,7 @@ export const stages: Stage[] = [
         duration: "45-90 min",
         difficulty: "intermediate",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       }
     ],
     guide: {
@@ -1547,383 +1440,6 @@ export const stages: Stage[] = [
     }
   },
   {
-    id: 5,
-    title: "Feature Expansion",
-    description: "Expand functionality with minimal coding, using plugins and integrations. Prepare for user testing.",
-    icon: <Layers size={36} />,
-    color: "text-cyan-600",
-    colorStart: "#0891b2",
-    colorEnd: "#0e7490",
-    duration: "1 day",
-    keyOutcome: "Enhanced product with secondary features ready for testing",
-    categories: [
-      { id: 501, name: "Extensions", color: "bg-cyan-100 text-cyan-700", icon: <Code size={16} />, description: "Tools for extending your product" },
-      { id: 502, name: "Integration", color: "bg-sky-100 text-sky-700", icon: <Link2 size={16} />, description: "Tools for connecting with external services" },
-      { id: 503, name: "Deployment", color: "bg-blue-100 text-blue-700", icon: <Rocket size={16} />, description: "Tools for deploying your application" }
-    ],
-    tools: [
-      { 
-        id: 5001, 
-        name: "Pivot Readiness Check", 
-        category: 501, 
-        description: "20-minute test simulating the ability to quickly change direction if needed.", 
-        link: "#", 
-        icon: <Repeat size={20} />,
-        tags: [
-          { id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
-        longDescription: "The Pivot Readiness Check is a Rabbit MVP exclusive exercise that tests how quickly you could change your product direction if market feedback indicates a pivot is needed. It simulates pivot scenarios and evaluates your technical and psychological readiness to change course.",
-        benefits: [
-          "Ensure your MVP can adapt to feedback quickly",
-          "Identify potential pivot blockers before they're critical",
-          "Build flexibility into your development approach",
-          "Prepare mentally for potential direction changes"
-        ],
-        howTo: [
-          "Create 2-3 realistic pivot scenarios for your product",
-          "For each scenario, map out required changes to your MVP",
-          "Estimate time and effort needed for each pivot",
-          "Identify ways to increase pivot readiness in your current development"
-        ],
-        resources: [
-          { title: "Pivot Readiness Assessment", url: "#", type: "template" },
-          { title: "Building Flexibility Into Your MVP", url: "#", type: "article" }
-        ],
-        duration: "20-30 min",
-        difficulty: "intermediate",
-        type: "framework",
-        isRabbitExclusive: true
-      },
-      { 
-        id: 5002, 
-        name: "Premature Optimization Paradox", 
-        category: 501, 
-        description: "Create a list of elements deliberately left unoptimized to maintain development speed.", 
-        link: "#", 
-        icon: <FileText size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
-        longDescription: "The Premature Optimization Paradox is a Rabbit MVP exclusive tool that helps you consciously identify and document aspects of your product that you're deliberately not optimizing yet. This creates psychological safety around imperfection and focuses resources on critical elements only.",
-        benefits: [
-          "Avoid wasting time on non-critical optimizations",
-          "Create explicit permission for 'good enough' solutions",
-          "Focus resources on what truly matters for validation",
-          "Reduce psychological barriers to shipping"
-        ],
-        howTo: [
-          "Identify all potential areas for optimization in your MVP",
-          "Rate each on impact to user experience and development effort",
-          "Explicitly document which optimizations you're deferring",
-          "Create a post-validation plan for addressing important optimizations"
-        ],
-        resources: [
-          { title: "Optimization Deferral Worksheet", url: "#", type: "template" },
-          { title: "Permission to Ship Imperfectly", url: "#", type: "article" }
-        ],
-        duration: "30-45 min",
-        difficulty: "intermediate",
-        type: "framework",
-        isRabbitExclusive: true
-      },
-      { 
-        id: 5003, 
-        name: "Solo Priority Matrix", 
-        category: 501, 
-        description: "Technique for individual prioritization of features, replacing team-based approaches.", 
-        link: "#", 
-        icon: <LayoutDashboard size={20} />,
-        tags: [{ id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" }],
-        longDescription: "The Solo Priority Matrix is designed specifically for solo founders to make objective feature prioritization decisions without a team. It combines impact, effort, confidence, and strategic alignment factors into a structured decision framework.",
-        benefits: [
-          "Make objective feature prioritization decisions",
-          "Balance multiple factors in your decision-making",
-          "Overcome common biases in solo prioritization",
-          "Create a clear roadmap for feature development"
-        ],
-        howTo: [
-          "List all features being considered for implementation",
-          "Rate each feature on impact, effort, confidence, and alignment",
-          "Apply the weighted scoring formula to each feature",
-          "Rank features based on final scores and implement in order"
-        ],
-        resources: [
-          { title: "Solo Priority Matrix Template", url: "#", type: "template" },
-          { title: "Feature Prioritization Guide", url: "#", type: "article" }
-        ],
-        duration: "30-45 min",
-        difficulty: "intermediate",
-        type: "framework",
-        isRabbitExclusive: false
-      },
-      { 
-        id: 5004, 
-        name: "API-First Development", 
-        category: 502, 
-        description: "Approach focused on building a stable API before the interface.", 
-        link: "#", 
-        icon: <Code size={20} />,
-        tags: [{ id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }],
-        longDescription: "API-First Development is an approach that prioritizes designing and implementing your core API before building the user interface. This creates a stable foundation for your product and enables flexibility in how the frontend is implemented.",
-        benefits: [
-          "Create a solid foundation for your product",
-          "Enable multiple interface options (web, mobile, etc.)",
-          "Facilitate easier testing and validation",
-          "Improve architectural quality of your MVP"
-        ],
-        howTo: [
-          "Design your API based on core product functionality",
-          "Document API endpoints, methods, and responses",
-          "Implement and test the API independently",
-          "Build frontend components that consume the API"
-        ],
-        resources: [
-          { title: "API Design Guide", url: "#", type: "article" },
-          { title: "API Documentation Template", url: "#", type: "template" }
-        ],
-        duration: "Varies by project",
-        difficulty: "advanced",
-        type: "framework",
-        isRabbitExclusive: false
-      },
-      { 
-        id: 5005, 
-        name: "Technical Debt Notes", 
-        category: 501, 
-        description: "Track conscious technical compromises with a plan for future resolution.", 
-        link: "#", 
-        icon: <FileText size={20} />,
-        tags: [{ id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }],
-        longDescription: "Technical Debt Notes is a system for documenting technical compromises made during MVP development. It acknowledges shortcuts taken for speed, explains their implications, and outlines a plan for addressing them after validation, creating accountability for code quality.",
-        benefits: [
-          "Make conscious technical compromises",
-          "Document reasons for technical decisions",
-          "Create accountability for addressing tech debt",
-          "Balance speed with long-term code quality"
-        ],
-        howTo: [
-          "Identify each technical compromise made for speed",
-          "Document the nature of the compromise and why it was made",
-          "Assess the potential impact if not addressed",
-          "Create a plan for resolving each debt item post-validation"
-        ],
-        resources: [
-          { title: "Technical Debt Register Template", url: "#", type: "template" },
-          { title: "Tech Debt Management Guide", url: "#", type: "article" }
-        ],
-        duration: "Ongoing",
-        difficulty: "intermediate",
-        type: "framework",
-        isRabbitExclusive: false
-      },
-      { 
-        id: 5006, 
-        name: "No-Code Integrations", 
-        category: 502, 
-        description: "Connect your product with external services without coding using integration platforms.", 
-        link: "#", 
-        icon: <Link2 size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }
-        ],
-        longDescription: "No-Code Integrations helps you connect your product with external services and APIs without writing custom code. Using platforms like Zapier or Integromat, you can implement automated workflows, data synchronization, and third-party service connections visually.",
-        benefits: [
-          "Add powerful integrations without coding",
-          "Connect to hundreds of services and APIs",
-          "Implement complex workflows visually",
-          "Save significant development time"
-        ],
-        howTo: [
-          "Identify the integrations needed for your MVP",
-          "Select an appropriate no-code integration platform",
-          "Configure triggers and actions for each workflow",
-          "Test and refine the integration"
-        ],
-        resources: [
-          { title: "Integration Platform Comparison", url: "#", type: "article" },
-          { title: "Common Integration Patterns", url: "#", type: "documentation" }
-        ],
-        duration: "Varies by integration",
-        difficulty: "beginner",
-        type: "software",
-        isRabbitExclusive: false
-      },
-      { 
-        id: 5007, 
-        name: "Serverless Functions", 
-        category: 502, 
-        description: "Implement backend functionality quickly using serverless platforms.", 
-        link: "#", 
-        icon: <Server size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }
-        ],
-        longDescription: "Serverless Functions allow you to implement backend logic without managing servers or infrastructure. They're perfect for MVPs, enabling you to create specific functionality like data processing, API integrations, and business logic with minimal overhead.",
-        benefits: [
-          "Implement backend functionality without infrastructure management",
-          "Pay only for what you use with low startup costs",
-          "Scale automatically with usage",
-          "Deploy and update quickly without server configuration"
-        ],
-        howTo: [
-          "Identify backend functionality needed in your MVP",
-          "Select a serverless platform (AWS Lambda, Vercel, etc.)",
-          "Create functions for specific operations or endpoints",
-          "Test and deploy functions individually"
-        ],
-        resources: [
-          { title: "Serverless Function Patterns", url: "#", type: "article" },
-          { title: "Serverless Platform Comparison", url: "#", type: "documentation" }
-        ],
-        duration: "Varies by function",
-        difficulty: "intermediate",
-        type: "software",
-        isRabbitExclusive: false
-      },
-      { 
-        id: 5008, 
-        name: "Simple Deployment Pipeline", 
-        category: 503, 
-        description: "Set up a minimal deployment process for efficiently updating your MVP.", 
-        link: "#", 
-        icon: <GitMerge size={20} />,
-        tags: [
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }
-        ],
-        longDescription: "This tool helps you create a streamlined deployment process for your MVP that balances simplicity with reliability. It ensures you can update your product quickly while maintaining stability and avoiding manual errors.",
-        benefits: [
-          "Deploy updates quickly and reliably",
-          "Reduce manual errors in deployment",
-          "Enable frequent iterations based on feedback",
-          "Maintain consistent environments"
-        ],
-        howTo: [
-          "Select appropriate deployment platforms for your stack",
-          "Configure basic CI/CD pipeline for automated builds",
-          "Set up staging and production environments",
-          "Implement simple pre-deployment checks"
-        ],
-        resources: [
-          { title: "Simple Deployment Setup Guide", url: "#", type: "article" },
-          { title: "Deployment Checklist", url: "#", type: "template" }
-        ],
-        duration: "90-120 min",
-        difficulty: "intermediate",
-        type: "framework",
-        isRabbitExclusive: false
-      }
-    ],
-    guide: {
-      overview: "Feature Expansion builds upon your core implementation by adding secondary features that enhance the product experience while maintaining the rapid development pace. This stage focuses on expanding functionality through integrations and plugins rather than custom development wherever possible.",
-      
-      keyObjectives: [
-        "Expand product functionality beyond core features",
-        "Integrate external services to add capabilities quickly",
-        "Enhance the user experience with secondary features",
-        "Ensure the product is ready for user testing",
-        "Maintain flexibility for potential pivots"
-      ],
-      
-      process: [
-        {
-          name: "Adaptability Assessment",
-          duration: "30 minutes",
-          description: "Ensure your implementation can adapt to feedback. Apply appropriate frameworks to create realistic pivot scenarios, identify required changes for each, and assess your ability to quickly implement them. Make adjustments to increase flexibility where needed."
-        },
-        {
-          name: "Secondary Feature Implementation",
-          duration: "4 hours",
-          description: "Add important but non-core functionality. Use development tools to implement the next tier of features from your prioritization, focusing on those that enhance the core experience. Maintain consistent design patterns across all implementations."
-        },
-        {
-          name: "Third-Party Integration",
-          duration: "90 minutes",
-          description: "Leverage existing services for added functionality. Use integration tools to connect to relevant APIs and services, implement authentication flows, and ensure reliable data exchange. This extends your product capabilities without custom development."
-        },
-        {
-          name: "Workflow Automation",
-          duration: "60 minutes",
-          description: "Create automated processes without custom code. Apply no-code tools to identify and automate repeatable processes, connect triggers and actions, and test automation sequences. This adds sophistication without increasing complexity."
-        },
-        {
-          name: "Administration Implementation",
-          duration: "60 minutes",
-          description: "Add tools to manage and observe your product. Use appropriate frameworks to implement basic admin functionality, monitoring, and simple dashboards. This provides visibility into product usage and issues."
-        },
-        {
-          name: "Optimization Planning",
-          duration: "30 minutes",
-          description: "Identify what you're deliberately not optimizing. Apply appropriate frameworks to list potential optimizations, document which ones you're deferring, and create a post-validation plan. This creates intentionality around your technical decisions."
-        },
-        {
-          name: "Technical Documentation",
-          duration: "30 minutes",
-          description: "Track conscious technical compromises. Use documentation tools to record shortcuts and compromises made for speed, rate each on importance, and create a plan for addressing them post-validation. This ensures technical decisions are deliberate, not accidental."
-        },
-        {
-          name: "End-to-End Testing",
-          duration: "60 minutes",
-          description: "Verify the expanded product works as a whole. Apply testing frameworks to check complete user journeys, verify integrations and data flows, and identify critical issues. This ensures the product is ready for user testing."
-        }
-      ],
-      
-      stageOutput: [
-        "Completed adaptability assessment",
-        "Implemented secondary feature set",
-        "Connected necessary third-party integrations",
-        "Created automated workflows",
-        "Added basic admin and monitoring capabilities",
-        "Documented deliberate optimization deferrals",
-        "Tracked technical decisions with future plans",
-        "Completed end-to-end testing",
-        "A fully functional MVP ready for user testing"
-      ],
-      
-      commonPitfalls: [
-        "Feature bloat: Stay disciplined about which secondary features to implement",
-        "Custom development trap: Use existing services rather than building custom",
-        "Integration complexity: Keep third-party integrations simple and focused",
-        "Obsessing over edge cases: Focus on the happy path for the majority of users",
-        "Premature scalability: Build for dozens of users, not thousands"
-      ],
-      
-      keyExpertise: [
-        "API integration skills",
-        "No-code automation knowledge",
-        "Testing methodology understanding",
-        "Technical documentation ability",
-        "Service integration experience"
-      ],
-      
-      transitionToNext: "With a complete MVP featuring both core and secondary functionality, you're ready to move to Testing & Refinement, where you'll validate your product with real users.",
-      
-      resources: [
-        {
-          title: "Third-Party API Integration Best Practices",
-          url: "https://nordicapis.com/7-tips-for-building-great-api-integrations/",
-          type: "article"
-        },
-        {
-          title: "No-Code Automation Tools Comparison",
-          url: "https://zapier.com/blog/best-automation-tools/",
-          type: "article"
-        },
-        {
-          title: "Technical Debt Management",
-          url: "https://martinfowler.com/bliki/TechnicalDebt.html",
-          type: "article"
-        },
-        {
-          title: "End-to-End Testing Guide",
-          url: "https://www.browserstack.com/guide/end-to-end-testing",
-          type: "article"
-        }
-      ]
-    }
-  },
-  {
     id: 6,
     title: "Testing & Refinement",
     description: "Test with real users, gather feedback, and make quick refinements to improve the experience.",
@@ -1946,10 +1462,6 @@ export const stages: Stage[] = [
         description: "Short, targeted remote testing sessions focused on specific aspects of your product.", 
         link: "#", 
         icon: <Video size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "Remote Micro-Tests are short, focused testing sessions designed to quickly evaluate specific features or aspects of your product. They emphasize brevity and specificity, allowing you to gather actionable feedback without lengthy test sessions.",
         benefits: [
           "Get targeted feedback on specific features",
@@ -1970,7 +1482,7 @@ export const stages: Stage[] = [
         duration: "30-90 min per test series",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 6002, 
@@ -1979,10 +1491,6 @@ export const stages: Stage[] = [
         description: "Compare your current shame index (4-7/10 is optimal) with initial assumptions.", 
         link: "#", 
         icon: <Repeat size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "The Shame Index Revisit is a Rabbit MVP exclusive tool for reassessing your product's level of 'readiness' using the Shame Index scale. It helps you determine if your MVP has reached the optimal 4-7/10 shame level: good enough to deliver value while still leaving room for improvement based on feedback.",
         benefits: [
           "Objectively assess your MVP's current state",
@@ -2003,7 +1511,7 @@ export const stages: Stage[] = [
         duration: "20-30 min",
         difficulty: "beginner",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 6003, 
@@ -2012,9 +1520,6 @@ export const stages: Stage[] = [
         description: "Evaluate interface intuitiveness by analyzing users' first clicks on tasks.", 
         link: "#", 
         icon: <MousePointer size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" }
-        ],
         longDescription: "First Click Testing evaluates how intuitive your interface is by tracking where users first click when trying to complete specific tasks. Research shows that users who get the first click right have an 87% chance of completing the task successfully, making this a powerful usability metric.",
         benefits: [
           "Identify unintuitive interface elements quickly",
@@ -2035,7 +1540,7 @@ export const stages: Stage[] = [
         duration: "45-60 min",
         difficulty: "beginner",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 6004, 
@@ -2044,9 +1549,6 @@ export const stages: Stage[] = [
         description: "Test first impressions by showing interfaces for just 5 seconds.", 
         link: "#", 
         icon: <Clock size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" }
-        ],
         longDescription: "The 5-Second Test evaluates users' first impressions of your product by showing them the interface for just 5 seconds, then asking specific questions. It helps you understand what stands out, what's memorable, and what impression your product creates immediately.",
         benefits: [
           "Assess immediate clarity and impact of your interface",
@@ -2067,7 +1569,7 @@ export const stages: Stage[] = [
         duration: "30-45 min",
         difficulty: "beginner",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 6005, 
@@ -2076,9 +1578,6 @@ export const stages: Stage[] = [
         description: "Get automated testing with video recording of users completing tasks.", 
         link: "#", 
         icon: <Video size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" }
-        ],
         longDescription: "Unmoderated User Testing platforms allow you to set up usability tests that participants complete on their own time. The platform records their screen, voice, and sometimes facial expressions as they complete tasks, giving you rich usability data without requiring your presence.",
         benefits: [
           "Collect usability data asynchronously",
@@ -2099,7 +1598,7 @@ export const stages: Stage[] = [
         duration: "Setup: 60-90 min, Results: 24-48 hours",
         difficulty: "intermediate",
         type: "software",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 6006, 
@@ -2108,9 +1607,6 @@ export const stages: Stage[] = [
         description: "Systematically assess your interface against established usability principles.", 
         link: "#", 
         icon: <CheckCircle size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" }
-        ],
         longDescription: "Heuristic Evaluation is a usability assessment method where you evaluate your interface against established usability principles or 'heuristics'. It helps you identify common usability issues systematically without requiring external users.",
         benefits: [
           "Identify common usability issues quickly",
@@ -2131,7 +1627,7 @@ export const stages: Stage[] = [
         duration: "60-120 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 6007, 
@@ -2140,9 +1636,6 @@ export const stages: Stage[] = [
         description: "Quick, informal tests with easily accessible users.", 
         link: "#", 
         icon: <Users size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" }
-        ],
         longDescription: "Guerrilla Testing is a low-cost, informal approach to user testing that involves recruiting impromptu participants from accessible locations (cafes, coworking spaces, friends, etc.) for quick feedback sessions. It sacrifices some methodological rigor for speed and convenience.",
         benefits: [
           "Get quick feedback with minimal planning",
@@ -2163,7 +1656,7 @@ export const stages: Stage[] = [
         duration: "2-3 hours",
         difficulty: "beginner",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 6008, 
@@ -2172,10 +1665,6 @@ export const stages: Stage[] = [
         description: "Implement tools to monitor and report errors in real-time.", 
         link: "#", 
         icon: <AlertCircle size={20} />,
-        tags: [
-          { id: 5, name: "Testing", color: "bg-neutral-100 text-neutral-700" },
-          { id: 4, name: "Development", color: "bg-gray-100 text-gray-700" }
-        ],
         longDescription: "Error Tracking tools automatically capture, report, and help diagnose errors and exceptions in your MVP. They provide real-time alerts, detailed context, and debugging information, allowing you to quickly identify and fix issues as they occur.",
         benefits: [
           "Detect and fix errors before most users encounter them",
@@ -2196,7 +1685,7 @@ export const stages: Stage[] = [
         duration: "30-60 min",
         difficulty: "intermediate",
         type: "software",
-        isRabbitExclusive: false
+        isFeatured: false
       }
     ],
     guide: {
@@ -2329,10 +1818,6 @@ export const stages: Stage[] = [
         description: "5 verification questions in the context of collected data.", 
         link: "#", 
         icon: <AlertCircle size={20} />,
-        tags: [
-          { id: 7, name: "Analytics", color: "bg-zinc-100 text-zinc-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "The Post-Launch Early Warning System is a Rabbit MVP exclusive tool that helps you evaluate early signals from your launched MVP. It consists of 5 critical questions that, when evaluated against initial usage data, help you quickly determine if your product is on the right track or needs significant adjustment.",
         benefits: [
           "Quickly interpret early usage signals",
@@ -2353,7 +1838,7 @@ export const stages: Stage[] = [
         duration: "30-45 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 7002, 
@@ -2362,10 +1847,6 @@ export const stages: Stage[] = [
         description: "Systematically extract lessons and tools from your project for future use.", 
         link: "#", 
         icon: <BookOpen size={20} />,
-        tags: [
-          { id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" },
-          { id: 9, name: "Rabbit Exclusive", color: "bg-amber-100 text-amber-700" }
-        ],
         longDescription: "Meta-Rabbit Expansion is a Rabbit MVP exclusive process for systematically documenting and extracting reusable elements from your project. It helps you build a growing library of code, components, prompts, and insights that accelerate each subsequent MVP, creating compounding efficiency gains.",
         benefits: [
           "Create reusable assets for future projects",
@@ -2386,7 +1867,7 @@ export const stages: Stage[] = [
         duration: "60-90 min",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: true
+        isFeatured: true
       },
       { 
         id: 7003, 
@@ -2395,9 +1876,6 @@ export const stages: Stage[] = [
         description: "Framework for tracking Acquisition, Activation, Retention, Referral, and Revenue.", 
         link: "#", 
         icon: <LineChart size={20} />,
-        tags: [
-          { id: 7, name: "Analytics", color: "bg-zinc-100 text-zinc-700" }
-        ],
         longDescription: "Pirate Metrics (AARRR) is a framework for tracking the five key metrics that matter for early-stage products: Acquisition (how users find you), Activation (first value experience), Retention (ongoing usage), Referral (user recommendations), and Revenue (monetization). It provides a complete view of your product's performance.",
         benefits: [
           "Focus on the metrics that truly matter for growth",
@@ -2418,7 +1896,7 @@ export const stages: Stage[] = [
         duration: "Initial setup: 60-90 min, Ongoing monitoring",
         difficulty: "intermediate",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 7004, 
@@ -2427,9 +1905,6 @@ export const stages: Stage[] = [
         description: "Measure customer loyalty and satisfaction with a single question survey.", 
         link: "#", 
         icon: <BarChart size={20} />,
-        tags: [
-          { id: 7, name: "Analytics", color: "bg-zinc-100 text-zinc-700" }
-        ],
         longDescription: "Net Promoter Score (NPS) is a simple yet powerful metric that measures customer loyalty and satisfaction by asking a single question: 'How likely are you to recommend our product to others?' It provides a standardized way to gauge user sentiment and predict growth potential.",
         benefits: [
           "Measure user satisfaction with minimal friction",
@@ -2450,7 +1925,7 @@ export const stages: Stage[] = [
         duration: "Setup: 30-45 min, Ongoing monitoring",
         difficulty: "beginner",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 7005, 
@@ -2459,9 +1934,6 @@ export const stages: Stage[] = [
         description: "Comprehensive checklist to ensure you've covered all aspects before launch.", 
         link: "#", 
         icon: <CheckSquare size={20} />,
-        tags: [
-          { id: 6, name: "Launch", color: "bg-slate-100 text-slate-700" }
-        ],
         longDescription: "The Launch Checklist is a comprehensive verification tool that ensures you've covered all critical aspects before releasing your MVP. It includes technical, marketing, legal, and operational items that are easy to overlook but important for a successful launch.",
         benefits: [
           "Ensure no critical launch items are overlooked",
@@ -2482,7 +1954,7 @@ export const stages: Stage[] = [
         duration: "60-90 min",
         difficulty: "beginner",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 7006, 
@@ -2491,9 +1963,6 @@ export const stages: Stage[] = [
         description: "Analyze behavior of user groups from the same time period.", 
         link: "#", 
         icon: <PieChart size={20} />,
-        tags: [
-          { id: 7, name: "Analytics", color: "bg-zinc-100 text-zinc-700" }
-        ],
         longDescription: "Cohort Analysis tracks how groups of users who joined at the same time (cohorts) behave over time. It helps you differentiate between overall trends and the actual improvements in your product experience by comparing how different user cohorts engage with your product.",
         benefits: [
           "Distinguish between overall trends and actual product improvements",
@@ -2514,7 +1983,7 @@ export const stages: Stage[] = [
         duration: "Setup: 45-60 min, Ongoing analysis",
         difficulty: "advanced",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 7007, 
@@ -2523,9 +1992,6 @@ export const stages: Stage[] = [
         description: "Tool to calculate your spending rate and predict runway.", 
         link: "#", 
         icon: <CreditCard size={20} />,
-        tags: [
-          { id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" }
-        ],
         longDescription: "The Burn Rate Calculator helps you track your spending rate (burn rate) and calculate how long your current resources will last (runway). It's essential for making informed decisions about resource allocation, pricing, and fundraising timing.",
         benefits: [
           "Track financial sustainability of your project",
@@ -2546,7 +2012,7 @@ export const stages: Stage[] = [
         duration: "Initial setup: 30-45 min, Monthly updates",
         difficulty: "intermediate",
         type: "template",
-        isRabbitExclusive: false
+        isFeatured: false
       },
       { 
         id: 7008, 
@@ -2555,9 +2021,6 @@ export const stages: Stage[] = [
         description: "Structured decision process for deciding the future of your project.", 
         link: "#", 
         icon: <GitBranch size={20} />,
-        tags: [
-          { id: 1, name: "Planning", color: "bg-slate-100 text-slate-700" }
-        ],
         longDescription: "The Pivot vs. Persevere Framework helps you make structured, data-informed decisions about whether to continue your current approach, make adjustments, or pivot to a different direction. It prevents both premature abandonment and stubborn persistence when changes are needed.",
         benefits: [
           "Make objective decisions about your product direction",
@@ -2578,7 +2041,7 @@ export const stages: Stage[] = [
         duration: "60-90 min",
         difficulty: "advanced",
         type: "framework",
-        isRabbitExclusive: false
+        isFeatured: false
       }
     ],
     guide: {
@@ -2691,7 +2154,6 @@ export const stages: Stage[] = [
 ];
 
 // Helper function to find a stage by ID
-// Helper function to find a stage by ID
 export const findStageById = (id: number): Stage | undefined => {
   return stages.find(stage => stage.id === id);
 };
@@ -2705,27 +2167,12 @@ export const findToolById = (id: number): Tool | undefined => {
   return undefined;
 };
 
-// Helper function to filter tools by tag
-export const filterToolsByTag = (tagId: number): Tool[] => {
-  const tools: Tool[] = [];
-  
-  stages.forEach(stage => {
-    stage.tools.forEach(tool => {
-      if (tool.tags.some(tag => tag.id === tagId)) {
-        tools.push(tool);
-      }
-    });
-  });
-  
-  return tools;
-};
-
 // Helper function to get all Rabbit Exclusive tools
 export const getRabbitExclusiveTools = (): Tool[] => {
-  return filterToolsByTag(9); // ID 9 is for "Rabbit Exclusive" tag
+  return stages.flatMap(stage => stage.tools.filter(tool => tool.isFeatured));
 };
 
 // Helper function to get all AI-Powered tools
 export const getAIPoweredTools = (): Tool[] => {
-  return filterToolsByTag(8); // ID 8 is for "AI-Powered" tag
+  return stages.flatMap(stage => stage.tools.filter(tool => tool.type === 'ai'));
 };

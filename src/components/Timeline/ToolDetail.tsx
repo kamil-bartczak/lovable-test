@@ -85,7 +85,7 @@ const ToolDetail: React.FC<ToolDetailProps> = ({
             <div>
               <div className="flex flex-wrap gap-2 mb-2">
                 {/* Tool badges */}
-                {tool.isRabbitExclusive && (
+                {tool.isFeatured && (
                   <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">
                     <Star size={12} className="mr-0.5" />
                     Rabbit Exclusive

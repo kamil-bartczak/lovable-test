@@ -1,12 +1,6 @@
 // types.ts
 import { ReactNode } from 'react';
 
-export interface ToolTag {
-  id: number;
-  name: string;
-  color: string;
-}
-
 export interface Category {
   id: number;
   name: string;
@@ -28,7 +22,6 @@ export interface Tool {
   description: string;
   link: string;
   icon: ReactNode;
-  tags: ToolTag[];
   longDescription?: string;
   benefits?: string[];
   howTo?: string[];
@@ -36,7 +29,7 @@ export interface Tool {
   duration?: string;
   difficulty?: 'beginner' | 'intermediate' | 'advanced';
   type?: 'ai' | 'manual' | 'software' | 'framework' | 'template';
-  isRabbitExclusive?: boolean;
+  isFeatured?: boolean;
 }
 
 export interface StageGuide {
